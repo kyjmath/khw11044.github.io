@@ -1,0 +1,44 @@
+I"+<h1 id="repository에-올리기">Repository에 올리기</h1>
+<hr />
+
+<ul id="markdown-toc">
+  <li><a href="#repository에-올리기" id="markdown-toc-repository에-올리기">Repository에 올리기</a></li>
+</ul>
+
+<p>로컬에서 지킬 테마를 커스텀하는 것까지 하였다.</p>
+
+<p>하지만 나 혼자 내 컴퓨터에서 하하 호호 사용할 것이 아니기 때문에 깃허브에 github.io로 볼수 있게 할것이다.</p>
+
+<p>​
+bundle exec jekyll serve 명령어를 하면 _site 폴더의 내용이 업데이트 된다.</p>
+
+<p>이 _site 폴더를 깃허브에 올리면 되지만 전체 폴더를 올려도 된다. 나중에 Prose.io를 통해 손쉽게 블로그를 관리하기 위해서는 전체 폴더를 레파지토리에 넣는다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/4-1.jpeg" alt="그림1" /></p>
+
+<p>자신의 깃허브 레파지토리에 들어간다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/4-2.jpeg" alt="그림2" /></p>
+
+<p>자신의 아이디.github.io로 레파지토리 이름을 정해준다. 필자는 이미 만들었기때문에 경고문구가 뜬다.</p>
+
+<p>​</p>
+
+<p>코드가 있는 전체 폴더에 우클릭으로 git을 연다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/4-3.png" alt="그림3" /></p>
+
+<p>git init</p>
+
+<p>git add -A</p>
+
+<p>git commit - m “blog”</p>
+
+<p>git remote add origin https://주소</p>
+
+<p>git push -u origin master</p>
+
+<p>브라우저 주소창에 ‘자기아이디.github.io’해본다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/4-4.jpeg" alt="그림4" /></p>
+:ET

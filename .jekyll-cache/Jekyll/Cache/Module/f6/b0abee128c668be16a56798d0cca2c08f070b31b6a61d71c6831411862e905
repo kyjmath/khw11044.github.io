@@ -1,0 +1,175 @@
+I"w
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-library-pytorch-dl-01" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        [PyTorch로 시작하는 딥러닝 입문]
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        01 파치토치 패키지의 기본 구성 
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/library/" class="flip-title">Library</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<a href="/pytorch/" class="flip-title">Pytorch</a> #<a href="/python/" class="flip-title">Python</a>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-19T02:45:51+09:00">2021년 01월 19일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/mldl/2021-01-19-concept-ml/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/library/2021-01-19-streamlit/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/library/2021-01-19-pytorch-dl-01/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/library/2021-01-19-pytorch-dl-01/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h2 id="011-파이토치-패키지의-기본-구성">01.1 파이토치 패키지의 기본 구성</h2>
+
+<hr />
+
+<p>공부 사이트, 참고 사이트 :</p>
+<blockquote>
+  <p><a href="https://wikidocs.net/book/2788">PyTorch로 시작하는 딥러닝 입문</a></p>
+</blockquote>
+
+<p><br />
+<br /></p>
+
+<ul id="markdown-toc">
+  <li><a href="#011-파이토치-패키지의-기본-구성" id="markdown-toc-011-파이토치-패키지의-기본-구성">01.1 파이토치 패키지의 기본 구성</a>    <ul>
+      <li><a href="#1-torch" id="markdown-toc-1-torch">1. torch</a></li>
+      <li><a href="#2-torchautograd" id="markdown-toc-2-torchautograd">2. torch.autograd</a></li>
+      <li><a href="#3-torchnn" id="markdown-toc-3-torchnn">3. torch.nn</a></li>
+      <li><a href="#4-torchoptim" id="markdown-toc-4-torchoptim">4. torch.optim</a></li>
+      <li><a href="#5-torchutilsdata" id="markdown-toc-5-torchutilsdata">5. torch.utils.data</a></li>
+      <li><a href="#6-torchonnx" id="markdown-toc-6-torchonnx">6. torch.onnx</a></li>
+      <li><a href="#이어서-공부는-ipynb을-이용해서-git-repo에-올려서-공부" id="markdown-toc-이어서-공부는-ipynb을-이용해서-git-repo에-올려서-공부">이어서 공부는 ipynb을 이용해서 git repo에 올려서 공부</a></li>
+    </ul>
+  </li>
+  <li><a href="#reference" id="markdown-toc-reference">Reference</a></li>
+</ul>
+
+<h3 id="1-torch">1. torch</h3>
+<hr />
+<p>메인 네임스페이스, 텐서 등의 다양한 수학 함수가 포함되어져 있으며  NumPy와 유사한 구조를 가짐</p>
+
+<h3 id="2-torchautograd">2. torch.autograd</h3>
+<hr />
+<p>자동 미분을 위한 함수들이 포함되어져 있음.
+자동 미분의 on/off를 제어하는 콘텍스트 매너저(enable_grad/no_grad)나 자체 미분 가능 함수를 정의할 때 사용하는 기반 클래스인 ‘Function’등이 포함되어져 있음.</p>
+
+<h3 id="3-torchnn">3. torch.nn</h3>
+<hr />
+<p>신경망을 구축하기 위한 다양한 데이터 구조나 레이어 등이 정의되어져 있습니다. 레이어(RNN,LSTM등과 같은), 활성화 함수(ReLU와 같은), 손실함수(MSE Loss와 같은)들이 있음.</p>
+
+<h3 id="4-torchoptim">4. torch.optim</h3>
+<hr />
+<p>확률적 경사 하강법(Stochastic Gradient Descent,SGD)를 중심으로 한 파라미터 최적화 알고리즘이 구현되어져 있음.</p>
+
+<h3 id="5-torchutilsdata">5. torch.utils.data</h3>
+<hr />
+<p>SGD의 반복 연산을 실행할 때 사용하는 미니 배치용 유틸리티 함수가 포함되어져 있음</p>
+
+<h3 id="6-torchonnx">6. torch.onnx</h3>
+<hr />
+<p>ONNX(Open Neural Network Exchange)의 포멧으로 모델을 익스포트(export)할 때 사용. ONNX는 서로 다른 딥 러닝 프레임워크간에 모델을 공유할 때 사용하는 포멧.</p>
+
+<h3 id="이어서-공부는-ipynb을-이용해서-git-repo에-올려서-공부">이어서 공부는 ipynb을 이용해서 git repo에 올려서 공부</h3>
+
+<blockquote>
+  <p><a href="https://github.com/khw11044/pytorch_tutorial">내 repository</a></p>
+</blockquote>
+
+<ul>
+  <li><strong>파이토치 기초</strong>
+    <ul>
+      <li>텐서 조작하기1</li>
+      <li>텐서 조작하기2</li>
+      <li>파이썬 클래스</li>
+    </ul>
+  </li>
+  <li><strong>선형회귀</strong>
+    <ul>
+      <li>자동미분</li>
+      <li>단순 선형회귀</li>
+      <li>다중 선형회귀</li>
+      <li>nn.Module로 구현하는 선형회귀</li>
+      <li>클래스로 파이토치 모델 구현하기</li>
+      <li>미니배치와 데이터로드</li>
+      <li>커스텀 데이터셋</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="reference">Reference</h2>
+<hr />
+<p><a href="https://www.hanbit.co.kr/store/books/look.php?p_code=B7818450418">파이토치 첫걸음</a></p>
+
+  
+</div>
+</article>
+:ET

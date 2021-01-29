@@ -1,0 +1,100 @@
+I"�
+
+
+
+
+
+<!--제목-->
+<article id="post-githubpages" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        GithubPages
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-29T16:02:25+09:00">2021년 01월 29일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  
+    <p class="note-sm" >
+        새로알게된 Github Pages 블로그, Jekyll 기술과 내용 설명 등등
+
+    </p>
+  
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/class/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/library/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/githubpages/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/githubpages/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    
+
+  
+</div>
+</article>
+:ET

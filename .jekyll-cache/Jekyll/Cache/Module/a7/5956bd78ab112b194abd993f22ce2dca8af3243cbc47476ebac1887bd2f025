@@ -1,0 +1,134 @@
+I"�
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-githubpages-making-blog-12" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        [GithubPages] 하루만에 만드는 깃허브 블로그
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        12.블로그 첫화면 설정
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/githubpages/" class="flip-title">Githubpages</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<a href="/jekyll/" class="flip-title">Jekyll</a>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2020-12-26T00:00:00+09:00">2020년 12월 26일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/githubpages/2020-12-26-making-blog-11/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/githubpages/2020-12-27-making-blog-13/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/githubpages/2020-12-26-making-blog-12/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/githubpages/2020-12-26-making-blog-12/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h1 id="블로그-첫화면-설정">블로그 첫화면 설정</h1>
+
+<p>블로그 첫화면이 블로그 글들의 목차들, 리스트로 나열되어있다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/12-2.JPG" alt="그림1" width="400" /></p>
+
+<p>나는 내 블로그에 처음 들어오면 내가 누구인지를 보여주고 싶다.(첫화면부터 about창이 뜨게 하고 싶다.)</p>
+
+<p>또는 나의 뮤즈가 된 그림이나 사진을 넣고 싶다. 처음부터 지저분한 게시물 리스트가 아니라.</p>
+
+<p>한번 파헤쳐보자.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#블로그-첫화면-설정" id="markdown-toc-블로그-첫화면-설정">블로그 첫화면 설정</a>    <ul>
+      <li><a href="#1_-현재-home-화면부터-찾기" id="markdown-toc-1_-현재-home-화면부터-찾기">1_ 현재 Home 화면부터 찾기</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1_-현재-home-화면부터-찾기">1_ 현재 Home 화면부터 찾기</h2>
+<hr />
+
+<p>root의 index.html에서 Home화면을 정하고 있다.</p>
+
+<p>현재 index.html은</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>---
+layout: blog
+title: Home
+---
+</code></pre></div></div>
+<p>로 되어있다.</p>
+
+<p>첫 홈 화면을 About으로 일단 하겠다. 나중에 나에게 영감이 되거나 뮤즈가 된 사진이나 그림을 내 첫화면에 하고 <a href="https://ratsgo.github.io/">이분 처럼</a>
+일단은 About으로 하자 또한 index.html 대신 index.md로 바꾸었다.
+아래와 같이 바꿔주었다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/12-4.JPG" alt="그림2" width="400" /></p>
+
+<p>그러면 내 url로 브라우저에 검색해서 접속하면 현재 내 블로그처럼 첫화면이 나를 소개하는 페이지가 된다.</p>
+
+  
+</div>
+</article>
+:ET

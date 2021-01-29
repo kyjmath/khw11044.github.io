@@ -1,0 +1,476 @@
+I"��
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-library-01_02_텐서조작하기1" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        PyTorch로 배우는 딥러닝/머신러닝 생기초
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        01.02.텐서 다루기1
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/library/" class="flip-title">Library</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<span>Pytorch</span>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-27T00:00:00+09:00">2021년 01월 27일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/library/2021-01-27-01_01_%ED%8C%8C%EC%9D%B4%ED%86%A0%EC%B9%98_%ED%8C%A8%ED%82%A4%EC%A7%80%EC%9D%98_%EA%B8%B0%EB%B3%B8%EA%B5%AC%EC%84%B1/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/library/2021-01-27-01_02_%ED%85%90%EC%84%9C%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B02/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/library/2021-01-27-01_02_%ED%85%90%EC%84%9C%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B01/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/library/2021-01-27-01_02_%ED%85%90%EC%84%9C%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B01/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h2 id="02텐서-다루기tensor-manipulation1">02.텐서 다루기(Tensor Manipulation)1</h2>
+<hr />
+
+<p>개요</p>
+<blockquote>
+  <p>벡터, 행렬, 텐서의 개념에 대해서 이해하고, Numpy와 파이토치로 벡터, 행렬, 텐서를 다루는 방법에 대해서 이해</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p><strong>벡터, 행렬 그리고 텐서(Vector, Matrix and Tensor)</strong></p>
+  </li>
+  <li>
+    <p><strong>넘파이 훑어보기(Numpy Review)</strong></p>
+  </li>
+  <li>
+    <p><strong>파이토치 텐서 선언하기(PyTorch Tensor Allocation)</strong></p>
+  </li>
+  <li>
+    <p><strong>행렬 곱셈(Maxtrix Multiplication)</strong></p>
+  </li>
+  <li>
+    <p><strong>다른 오퍼레이션들(Other Basic Ops)</strong></p>
+  </li>
+</ul>
+
+<h2 id="021-벡터-행렬-그리고-텐서vector-matrix-and-tensor">02.1. 벡터, 행렬 그리고 텐서(Vector, Matrix and Tensor)</h2>
+<hr />
+<h3 id="1-벡터행렬텐서-그림으로-이해하기">1) 벡터,행렬,텐서 그림으로 이해하기</h3>
+
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_01.JPG" alt="0102_01" /></p>
+
+<p>딥러닝을 하게 되면 다루게 되는 가장 기본적인 단위: 벡터, 행렬, 텐서</p>
+
+<p>스칼라 : 차원이 없는 값<br />
+벡터(Vector) : 1차원으로 구성된 값<br />
+행렬(Matrix) : 2차원으로 구성된 값
+텐서(Tensor) : 3차원으로 구성된 값<br />
+4차원 : 텐서를 쌓아 올린거<br />
+5차원 : 4차원을 옆으로 확장한거<br />
+6차원 : 5차원을 뒤로 확장한 모습</p>
+
+<h3 id="2-pytorch-tensor-shape-convention">2) PyTorch Tensor Shape Convention</h3>
+<p>딥러닝을 할때 행렬,텐서의 크기를 고려하는 것은 항상 중요.<br />
+행렬과 텐서의 크기를 표현할 표기</p>
+
+<p><strong>*2D Tensor(Typical Simple Setting)</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>t</td>
+      <td>= (batch_size,dim)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_02.JPG" alt="0102_02" width="400" /></p>
+
+<p>2차원 텐서의 크기 |t|를 (batch size x dimension)으로 표현<br />
+행의 크기 : batch_size<br />
+열의 크기 : dim</p>
+
+<p><strong>*3D Tensor(Typical Computer Vision) - 비전 분야에서의 3차원 텐서</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>t</td>
+      <td>= (batch_size,width,height)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_03.JPG" alt="0102_03" width="400" /></p>
+
+<p>일반적으로 비전 분야(이미지, 영상 처리)</p>
+
+<p>세로 : batch_size<br />
+가로 : 너비(width)<br />
+높이 : height</p>
+
+<p><strong>*3D Tensor(Typical Natural Language Processing) - NLP 분야에서의 3차원 텐서</strong></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>t</td>
+      <td>= (batch_size,length,dim)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_04.JPG" alt="0102_04" width="400" /></p>
+
+<p>자연어 처리 3차원 텐서(batch_size, 문장 길이, 단어 벡터의 차원) 사4</p>
+
+<p>세로 : batch_size<br />
+가로 : 너비(width)<br />
+높이 : height</p>
+
+<h2 id="022-넘파이로-텐서-만들기벡터와-행렬-만들기">02.2. 넘파이로 텐서 만들기(벡터와 행렬 만들기)</h2>
+<hr />
+<p>np.array(행렬)</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+</code></pre></div></div>
+
+<h3 id="1-1d-with-numpy">1) 1D with Numpy</h3>
+<p>1차원 벡터</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>1차원 벡터의 차원과 크기 출력</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'차원 : '</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span>  <span class="c1"># 차원 : 1
+</span><span class="k">print</span><span class="p">(</span><span class="s">'크기: '</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 크기 : (7,)
+</span></code></pre></div></div>
+<ul>
+  <li>.ndim : 몇 차원인지를 출력</li>
+  <li>shape는 크기를 출력</li>
+</ul>
+
+<h3 id="1-1-numpy-기초-이해하기">1-1) Numpy 기초 이해하기</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'t[0] t[1] t[-1] = '</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># t[0] t[1] t[-1] =  0.0 1.0 6.0
+</span></code></pre></div></div>
+<p>t[0] : index 0번째 원소
+t[1] : index 1번째 원소
+t[-1] : index -1번째 원소 –&gt; 가장 뒤에(마지막) 원소</p>
+
+<p><strong>범위 지정으로 원소를 불러오기 : 슬라이싱(Slicing)</strong></p>
+
+<ul>
+  <li>t[시작 번호 : 끝 번호] : 시작 번호부터 끝 번호 전 번호까지</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># t : [0. 1. 2. 3. 4. 5. 6.]
+</span><span class="k">print</span><span class="p">(</span><span class="s">'t[2:5] t[4:-1]  = '</span><span class="p">,</span> <span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># t[2:5] = [2. 3. 4.]
+# t[4:-1] = [4. 5.]
+</span></code></pre></div></div>
+
+<ul>
+  <li>시작 번호 또는 끝 번호를 생략해서 슬라이싱<br />
+[시작 번호:끝 번호]
+<strong>시작 번호</strong>가 생략 되어있으면 : 처음부터 끝번호까지<br />
+<strong>끝 번호</strong>가 생략 되어있으면 : 시작번호부터 끝까지
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># t : [0. 1. 2. 3. 4. 5. 6.]
+</span><span class="k">print</span><span class="p">(</span><span class="s">'t[:2] t[3:] = '</span><span class="p">,</span> <span class="n">t</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
+<span class="c1"># t[:2] = [0. 1. 2.]
+# t[3:] = [3. 4. 5. 6.]
+</span></code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="2-2d-with-numpy">2) 2D with Numpy</h3>
+<p>2차원 벡터</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span> <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span> <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">],</span> <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[[ 1.  2.  3.]
+ [ 4.  5.  6.]
+ [ 7.  8.  9.]
+ [10. 11. 12.]]
+</code></pre></div></div>
+
+<p>2차원 벡터의 차원과 크기 출력</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'차원 : '</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="n">ndim</span><span class="p">)</span>  <span class="c1"># 차원 : 2
+</span><span class="k">print</span><span class="p">(</span><span class="s">'크기: '</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 크기 : (4,3)
+</span></code></pre></div></div>
+
+<h2 id="023-파이토치-텐서-선언하기pytorch-tensor-allocation">02.3. 파이토치 텐서 선언하기(PyTorch Tensor Allocation)</h2>
+<hr />
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">torch</span>
+</code></pre></div></div>
+
+<h3 id="1-1d-with-pytorch">1) 1D with PyTorch</h3>
+<p>파이토치로 1차원 행2</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">dim</span><span class="p">())</span>  <span class="c1"># 차원 : 1
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 크기 : [7]
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="c1"># 크기 : [7]
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># 인덱스로 접근
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">5</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>    <span class="c1"># 슬라이싱
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">t</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>       <span class="c1"># 슬라이싱
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor(0.) tensor(1.) tensor(6.)
+tensor([2., 3., 4.]) tensor([4., 5.])
+tensor([0., 1.]) tensor([3., 4., 5., 6.])
+</code></pre></div></div>
+
+<h3 id="2-2d-with-pytorch">2) 2D with PyTorch</h3>
+<p>파이토치로 2차원 행렬</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">4.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">7.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mf">9.</span><span class="p">],</span>
+                       <span class="p">[</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">11.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">]</span>
+                      <span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">dim</span><span class="p">())</span>  <span class="c1"># 차원 : 2
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>  <span class="c1"># 크기 : [4,3]
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">size</span><span class="p">())</span> <span class="c1"># 크기 : [4,3]
+</span></code></pre></div></div>
+
+<p>슬라이싱</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># 첫번째 차원을 전체 선택한 상황에서 두번째 차원의 첫번째 것만 가져온다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">].</span><span class="n">size</span><span class="p">())</span> <span class="c1"># ↑ 위의 경우의 크기
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([ 2.,  5.,  8., 11.])
+torch.Size([4])
+</code></pre></div></div>
+
+<p>슬라이싱 첫번째 차원은 전부, 두번째 차원은 처음부터 맨마지막 열 전열까지</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[ 1.,  2.],
+        [ 4.,  5.],
+        [ 7.,  8.],
+        [10., 11.]])
+</code></pre></div></div>
+
+<h3 id="3-브로드캐스팅broadcasting">3) 브로드캐스팅(Broadcasting)</h3>
+
+<p>행렬의 덧셈/뺄셈 : 행렬의 크기가 같아야함<br />
+행렬의 곱셈 : 앞 행렬의 마지막 차원 = 뒤 행렬의 마지막 차원 일치해야함</p>
+
+<p>파이토치에서는 자동으로 행렬의 크기를 맞춰서 연산을 수행 : <strong>브로드캐스팅</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Vector + scalar
+</span><span class="n">m1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span> <span class="c1"># [3] -&gt; [3, 3]
+</span><span class="k">print</span><span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">)</span>  <span class="c1"># [1, 2] + [3, 3]
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[4., 5.]])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># 2 x 1 Vector + 1 x 2 Vector
+</span><span class="n">m1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]])</span>    <span class="c1"># [[1, 2], [1, 2]]
+</span><span class="n">m2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">]])</span>  <span class="c1"># [[3, 3], [4, 4]]
+</span><span class="k">print</span><span class="p">(</span><span class="n">m1</span> <span class="o">+</span> <span class="n">m2</span><span class="p">)</span>  <span class="c1"># [[1+3, 2+3], [1+4, 2+4]]
+</span></code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([4., 5.],
+       [5., 6.]])
+</code></pre></div></div>
+
+<p>브로드캐스팅은 편리하지만, 자동으로 실행되는 기능이므로 주의가 필요 : 오류를 발생하지 않고 진행되기 때문에 실수를 넘겨버리고 결과가 바뀔수도 있음, 오류를 찾는것이 쉽지 않을 수 있음.</p>
+
+<h3 id="4-자주-사용되는-기능들">4) 자주 사용되는 기능들</h3>
+
+<h4 id="4-1-행렬-곱셈과-원소별-곱셈의-차이matrix-multiplication-vs-multiplication">4-1) 행렬 곱셈과 원소별 곱셈의 차이(Matrix Multiplication Vs. Multiplication)</h4>
+<p>행렬 곱셈(.matmul)<br />
+원소 별 곱셈(.mul)</p>
+
+<p><strong>파이토치 텐서의 행렬 곱셈</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">m2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'m1 행렬의 크기: '</span><span class="p">,</span> <span class="n">m1</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># 2 x 2
+</span><span class="k">print</span><span class="p">(</span><span class="s">'m2 행렬의 크기: '</span><span class="p">,</span> <span class="n">m2</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># 2 x 1
+</span><span class="k">print</span><span class="p">(</span><span class="s">'m1과m2 곱'</span><span class="p">,</span> <span class="n">m1</span><span class="p">.</span><span class="n">matmul</span><span class="p">(</span><span class="n">m2</span><span class="p">))</span> <span class="c1"># 2 x 1
+</span></code></pre></div></div>
+
+<p>$$ \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4  \end{pmatrix} \begin{pmatrix} 1 \\ 2 \end{pmatrix} = \begin{pmatrix} 5 \\ 11 \end{pmatrix}$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shape of Matrix 1:  torch.Size([2, 2])
+Shape of Matrix 2:  torch.Size([2, 1])
+tensor([[ 5.],
+        [11.]])
+</code></pre></div></div>
+
+<p><strong>파이토치 텐서의 Element-wise 곱셈</strong>
+일한 크기의 행렬이 동일한 위치에 있는 원소끼리 곱<br />
+서로 다른 크기의 행렬일 경우 브로드캐스팅이 된 후에 element-wise 곱셈이 수행</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">m1</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>  
+<span class="n">m2</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>  <span class="c1"># [[1, 1], [2, 2]]
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Shape of Matrix 1: '</span><span class="p">,</span> <span class="n">m1</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># 2 x 2
+</span><span class="k">print</span><span class="p">(</span><span class="s">'Shape of Matrix 2: '</span><span class="p">,</span> <span class="n">m2</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># 2 x 1
+</span><span class="k">print</span><span class="p">(</span><span class="n">m1</span> <span class="o">*</span> <span class="n">m2</span><span class="p">)</span> <span class="c1"># = print(m1.mul(m2))
+</span></code></pre></div></div>
+
+<p>$$ \begin{pmatrix} 1 &amp; 2 \\ 3 &amp; 4  \end{pmatrix} * \begin{pmatrix} 1 &amp; 1\\ 2 &amp; 2 \end{pmatrix} = \begin{pmatrix} 1 &amp; 2\\ 6 &amp; 8 \end{pmatrix}$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Shape of Matrix 1:  torch.Size([2, 2])
+Shape of Matrix 2:  torch.Size([2, 1])
+tensor([[1., 2.],
+        [6., 8.]])
+tensor([[1., 2.],
+        [6., 8.]])
+</code></pre></div></div>
+
+<h4 id="4-2-덧셈sum과-평균mean">4-2) 덧셈(Sum)과 평균(Mean)</h4>
+<p>덧셈
+dim=0 : 첫번째 차원(=행)을 의미
+dim=1 : 두번째 차원(=열)을 의미
+dim=-1 : 마지막 차원을 의미</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">sum</span><span class="p">())</span> <span class="c1"># 단순히 원소 전체의 덧셈을 수행
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># 행을 제거, 열을 기준으로 덧셈
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 열을 제거, 행을 기준으로 덧셈
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">sum</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 열을 제거(마지막 차원 제거)
+</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor(10.)
+tensor([4., 6.])
+tensor([3., 7.])
+tensor([3., 7.])
+</code></pre></div></div>
+
+<p>평균</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">mean</span><span class="p">())</span>
+<span class="c1"># 1.5000
+</span></code></pre></div></div>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">mean</span><span class="p">())</span> <span class="c1"># 단순히 원소 전체의 평균 수행
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># 행을 제거, 열을 기준으로 평균
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 열을 제거, 행을 기준으로 평균
+</span><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">mean</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 열을 제거(마지막 차원 제거)
+</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor(2.5000)  # 10/4
+tensor([2., 3.])  # (1+3)/2, (2+4)/2
+tensor([1.5000, 3.5000])  # (1+2)/2, (3+4)/2
+tensor([1.5000, 3.5000])
+</code></pre></div></div>
+
+<h4 id="4-3-max와-argmax">4-3) Max와 ArgMax</h4>
+
+<p>최대(Max): 원소의 최대값을 리턴<br />
+아그맥스(ArgMax): 최대값을 가진 인덱스를 리턴</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">max</span><span class="p">())</span> <span class="c1"># 원소 중 최대값인 4를 리턴
+</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 2.],
+        [3., 4.]])
+tensor(4.)
+</code></pre></div></div>
+
+<p>dim=0 : 첫번째 차원을 제거</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(tensor([3., 4.]), tensor([1, 1]))
+</code></pre></div></div>
+<ul>
+  <li>max에 dim 인자를 주면 argmax도 함께 리턴<br />
+tensor([3., 4.])는 가장 큰값을 갖는 행렬을 리턴
+tensor([1, 1])는 가장 큰값을 갖는 위치를 리턴 : 첫번째 열에서 3의 인덱스는 1, 두번째 열에서 4의 인덱스는 1 –&gt; [1, 1]</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Max: '</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="s">'Argmax: '</span><span class="p">,</span> <span class="n">t</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Max:  tensor([3., 4.])
+Argmax:  tensor([1, 1])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="nb">max</span><span class="p">(</span><span class="n">dim</span><span class="o">=-</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>(tensor([2., 4.]), tensor([1, 1]))
+(tensor([2., 4.]), tensor([1, 1]))
+</code></pre></div></div>
+
+<p>이어서 텐서를 조작하는 방법을 알아본다, 텐서 차원 변경, 크기변경, View, Squeeze, Unsqueeze, Concatenate, Stacking, In-place</p>
+
+  
+</div>
+</article>
+:ET

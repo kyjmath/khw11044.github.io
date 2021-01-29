@@ -1,0 +1,155 @@
+I"Z
+
+
+  <aside class="about related mt4 mb4" role="complementary">
+    
+    
+
+<div class="author mt4" style="margin: 10px;">
+  
+
+  
+  
+  <h2  class="page-title hr-bottom">
+    About
+  </h2>
+
+
+        
+            
+
+<div class="img-set" style="background-color: rgb(58, 77, 33);"></div>
+<img
+  
+    src="/assets/img/me.jpg"
+    srcset="/assets/img/me.jpg 1x,/assets/img/me.jpg 2x"
+    
+  
+  alt="김현우(따라쟁이)"
+  class="avatar"
+  
+  loading="lazy"
+  style="float: left; margin-left: 5px; margin-top: 5px;  width:140px; height:140px;"
+/>
+</div>
+        
+
+        
+    <div class="author-body-description" style="margin-left: 200px; margin-top: 40px;" >
+        <span style = " font-size:1.4em;  color: rgb(0, 0, 0);"><strong><p>김현우(따라쟁이)</p>
+</strong></span>
+        <span style = "font-size:1em; color: rgb(141, 141, 141);"><b><p>풀스택 개발자를 꿈꾸는 AI 대학원생</p>
+
+<p>Please check my <a href="/public.CV.pdf">CV</a> to find out for more about me !</p>
+</b></span>
+    </div>
+       <!--소셜-->
+       <div class="sidebar-social" style="margin-top: 30px; margin-left: 15px;">
+        <span class="sr-only">Social:</span>
+<ul>
+  
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://instagram.com/hyunew_dude" title="Instagram" class="no-mark-external">
+      <span class="icon-instagram"></span>
+      <span class="sr-only">Instagram</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://github.com/khw11044" title="GitHub" class="no-mark-external">
+      <span class="icon-github"></span>
+      <span class="sr-only">GitHub</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="mailto:khw11044@gmail.com" title="Email" class="no-mark-external">
+      <span class="icon-mail"></span>
+      <span class="sr-only">Email</span>
+    </a>
+  </li>
+
+
+    
+      
+
+
+
+  
+
+  
+  
+  
+  
+
+  
+
+  
+
+  <li>
+    <a href="https://khw11044.github.io" title="RSS" class="no-mark-external">
+      <span class="icon-rss2"></span>
+      <span class="sr-only">RSS</span>
+    </a>
+  </li>
+
+
+    
+  
+</ul>
+
+    </div>
+
+</div>
+  </aside>
+:ET

@@ -1,0 +1,239 @@
+I"�+
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-githubpages-making-blog-11" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        [GithubPages] 하루만에 만드는 깃허브 블로그
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        11.이전글, 다음글 버튼 만들기
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/githubpages/" class="flip-title">Githubpages</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<a href="/jekyll/" class="flip-title">Jekyll</a>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2020-12-26T00:00:00+09:00">2020년 12월 26일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/githubpages/2020-12-26-making-blog-10/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/githubpages/2020-12-26-making-blog-12/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/githubpages/2020-12-26-making-blog-11/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/githubpages/2020-12-26-making-blog-11/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h1 id="이전글-다음글-버튼-만들기">이전글, 다음글 버튼 만들기</h1>
+
+<p>연속된 게시물인 경우, 시리즈물인 경우 게시물을 다 본 뒤 다음 게시물을 바로 보고 싶다.</p>
+
+<p>하지만 게시물을 다 본 뒤 다음 게시물을 보기위해서 뒤로 가기 버튼을 눌러 게시물 리스트 페이지로 간뒤에</p>
+
+<p>다음 게시물을 찾아 클릭해야하는 2번의 행동을 해야한다.</p>
+
+<p>게시물을 다보면 다음 게시물을 볼수 있는 버튼이 있으면 좋겠다는 생각이 들어 이전글 다음글 보기 버튼 만들기 포스팅을 준비해보았다.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#이전글-다음글-버튼-만들기" id="markdown-toc-이전글-다음글-버튼-만들기">이전글, 다음글 버튼 만들기</a>    <ul>
+      <li><a href="#1_-버튼-구성" id="markdown-toc-1_-버튼-구성">1_ 버튼 구성</a></li>
+      <li><a href="#2_-버튼-디자인" id="markdown-toc-2_-버튼-디자인">2_ 버튼 디자인</a></li>
+      <li><a href="#3_-버튼-위치시키기" id="markdown-toc-3_-버튼-위치시키기">3_ 버튼 위치시키기</a>        <ul>
+          <li><a href="#about-밑에-위치-시키기" id="markdown-toc-about-밑에-위치-시키기"><strong>about 밑에 위치 시키기</strong></a></li>
+          <li><a href="#related-안에-위치시키기" id="markdown-toc-related-안에-위치시키기"><strong>Related 안에 위치시키기</strong></a></li>
+          <li><a href="#게시물-가장-아래-about-위에-위치시키기" id="markdown-toc-게시물-가장-아래-about-위에-위치시키기"><strong>게시물 가장 아래 about 위에 위치시키기</strong></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1_-버튼-구성">1_ 버튼 구성</h2>
+<hr />
+<p>먼저 <code>_include</code> 폴더에 <code class="language-plaintext highlighter-rouge">page-button.html</code> 파일을 만든다.</p>
+
+<p>이후 아래 코드를 넣어준다.</p>
+
+<p>🔗 <a href="https://github.com/khw11044/githubpagesamplecode/issues/3">https://github.com/khw11044/githubpagesamplecode/issues/3</a></p>
+
+<p><code class="language-plaintext highlighter-rouge">if page.previous.url</code>를 통해 이전 게시물의 주소를 불러올수 있다.
+이때 버튼내의 글자는 이전 게시물의 제목으로 할수 있다.</p>
+
+<p>마찬가지로 <code class="language-plaintext highlighter-rouge"> if page.next.url </code>로 다음 게시물을 불러올수 있다.</p>
+
+<p>게시물 제목으로 하는 경우 아래와 같다</p>
+
+<p><img src="/assets/img/Blog/githubpages/11-1.JPG" alt="그림1" /></p>
+
+<p>부제목인 경우 [GithubPages] 10.-검색엔진최적화 –&gt; 10.검색엔진최적화로 바꿀수도 있다.</p>
+
+<p>필자는 ‘이전글’ ‘다음글’로 정하였다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div class="page-control"&gt;
+	&lt;div&gt;
+		
+		&lt;a id="prev" class="button" href="/blog/githubpages/2020-12-26-making-blog-10/"&gt;&amp;laquo; 이전글&lt;/a&gt;
+		
+	&lt;/div&gt;
+
+	&lt;div&gt;
+		
+		&lt;a id="next" class="button" href="/blog/githubpages/2020-12-26-making-blog-12/"&gt;다음글 &amp;raquo;&lt;/a&gt;
+		
+	&lt;/div&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/githubpages/11-2.JPG" alt="그림2" width="400" /></p>
+
+<h2 id="2_-버튼-디자인">2_ 버튼 디자인</h2>
+<hr />
+<p>자 그럼 이제 버튼 디자인을 위 사진처럼 만들어 보자.</p>
+
+<p><code class="language-plaintext highlighter-rouge">assets/css/hydejack.css</code>파일을 연다.</p>
+
+<p>page-button.html에서 div class 가 page-control이다.
+이름을 맞춰서 <code>hydejack.css</code> 파일 가장 아래에 아래 코드를 추가해준다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.page-control</span> <span class="p">{</span>
+  <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+  <span class="nl">display</span><span class="p">:</span> <span class="n">flex</span><span class="p">;</span>
+  <span class="nl">align-items</span><span class="p">:</span> <span class="nb">center</span><span class="p">;</span>
+  <span class="nl">justify-content</span><span class="p">:</span> <span class="n">space-between</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.page-control</span> <span class="o">&gt;</span> <span class="nt">div</span> <span class="p">{</span>
+  <span class="nl">max-width</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.button</span> <span class="p">{</span>
+  <span class="nl">box-shadow</span><span class="p">:</span><span class="nb">inset</span> <span class="m">0px</span> <span class="m">1px</span> <span class="m">0px</span> <span class="m">0px</span> <span class="m">#ffffff</span><span class="p">;</span>
+	<span class="nl">background</span><span class="p">:</span><span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">bottom</span><span class="p">,</span> <span class="m">#ffffff</span> <span class="m">5%</span><span class="p">,</span> <span class="m">#f6f6f6</span> <span class="m">100%</span><span class="p">);</span>
+	<span class="nl">background-color</span><span class="p">:</span><span class="m">#ffffff</span><span class="p">;</span>
+	<span class="nl">border-radius</span><span class="p">:</span><span class="m">16px</span><span class="p">;</span>
+	<span class="nl">border</span><span class="p">:</span><span class="m">3px</span> <span class="nb">solid</span> <span class="m">#dcdcdc</span><span class="p">;</span>
+	<span class="nl">display</span><span class="p">:</span><span class="n">inline-block</span><span class="p">;</span>
+	<span class="nl">cursor</span><span class="p">:</span><span class="nb">pointer</span><span class="p">;</span>
+	<span class="nl">color</span><span class="p">:</span><span class="m">#666666</span><span class="p">;</span>
+	<span class="nl">font-family</span><span class="p">:</span><span class="n">Arial</span><span class="p">;</span>
+	<span class="nl">font-size</span><span class="p">:</span><span class="m">18px</span><span class="p">;</span>
+	<span class="nl">font-weight</span><span class="p">:</span><span class="nb">bold</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span><span class="m">6px</span> <span class="m">100px</span><span class="p">;</span>
+	<span class="nl">text-decoration</span><span class="p">:</span><span class="nb">none</span><span class="p">;</span>
+	<span class="nl">text-shadow</span><span class="p">:</span><span class="m">0px</span> <span class="m">1px</span> <span class="m">0px</span> <span class="m">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.button</span><span class="nd">:hover</span> <span class="p">{</span>
+  <span class="nl">background</span><span class="p">:</span><span class="n">linear-gradient</span><span class="p">(</span><span class="n">to</span> <span class="nb">bottom</span><span class="p">,</span> <span class="m">#f6f6f6</span> <span class="m">5%</span><span class="p">,</span> <span class="m">#ffffff</span> <span class="m">100%</span><span class="p">);</span>
+	<span class="nl">background-color</span><span class="p">:</span><span class="m">#f6f6f6</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nc">.button</span><span class="nd">:active</span> <span class="p">{</span>
+  <span class="nl">position</span><span class="p">:</span><span class="nb">relative</span><span class="p">;</span>
+	<span class="nl">top</span><span class="p">:</span><span class="m">1px</span><span class="p">;</span>
+  <span class="p">}</span>
+</code></pre></div></div>
+
+<p>자신의 취향대로 버튼을 커스텀해보자.</p>
+
+<h2 id="3_-버튼-위치시키기">3_ 버튼 위치시키기</h2>
+<hr />
+
+<h3 id="about-밑에-위치-시키기"><strong>about 밑에 위치 시키기</strong></h3>
+
+<p><img src="/assets/img/Blog/githubpages/11-3.JPG" alt="그림3" /></p>
+
+<p><code>_layouts/post.html</code>에 <code>% include about.html %</code> 밑에 <code>% include page-button.html %</code>를 넣어준다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/11-4.JPG" alt="그림4" /></p>
+
+<h3 id="related-안에-위치시키기"><strong>Related 안에 위치시키기</strong></h3>
+
+<p>기존에 <code>_layouts/post.html</code>를 원래되로 돌려놓는다.</p>
+
+<p><code>_includes/related.html</code>에 아래와 같이 <code>% include page-button.html %</code>를 붙혀넣는다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/11-5.JPG" alt="그림5" /></p>
+
+<p>결과</p>
+
+<p><img src="/assets/img/Blog/githubpages/11-6.JPG" alt="그림6" /></p>
+
+<h3 id="게시물-가장-아래-about-위에-위치시키기"><strong>게시물 가장 아래 about 위에 위치시키기</strong></h3>
+
+<p><code>_includes/related.html</code>를 다시 원래대로 돌려놓는다.</p>
+
+<p><code>_layouts/post.html</code>에 <code>% include about.html %</code> 위에 <code>% include page-button.html %</code>를 넣어준다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/11-2.JPG" alt="그림2" /></p>
+
+<p>현재 필자의 블로그 상태이다.
+이게 제일 맘에 든다.</p>
+
+  
+</div>
+</article>
+:ET

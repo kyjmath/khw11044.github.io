@@ -1,0 +1,120 @@
+I"Y
+
+
+
+
+
+<!--제목-->
+<article id="post-etc-diary-monday" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        2021년 1월 18일
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        1월18월
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/etc/" class="flip-title">ETC</a> >> <a href="/diary/" class="flip-title">Diary</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-18T12:45:51+09:00">2021년 01월 18일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/study/2021-01-15-%EC%97%B0%EA%B5%AC/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/mldl/2021-01-19-concept-dl/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/etc/diary/2021-01-18-monday/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/etc/diary/2021-01-18-monday/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h2 id="다시-목표">다시 목표</h2>
+
+<ol>
+  <li>패턴인식 한 주에 한단원씩 다시 공부 꼼꼼히
+    <ul>
+      <li>ppt 만들고 설명할수 있을만큼 보고, 영상도 찍기</li>
+    </ul>
+  </li>
+  <li>리액트 공부
+    <ul>
+      <li><a href="https://www.inflearn.com/users/113211">리액트 강의</a></li>
+    </ul>
+  </li>
+  <li>
+    <p>pytorch 공부</p>
+  </li>
+  <li>
+    <p>파이썬 자료구조, 알고리즘 공부</p>
+  </li>
+  <li>논문 읽기</li>
+</ol>
+
+<blockquote>
+  <p>sometimes you gotta run before you can walk
+아이언맨 1에&gt; -토니 스타크-</p>
+</blockquote>
+
+  
+</div>
+</article>
+:ET

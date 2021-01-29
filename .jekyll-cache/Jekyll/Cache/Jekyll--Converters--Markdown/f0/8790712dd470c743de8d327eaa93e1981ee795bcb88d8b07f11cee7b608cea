@@ -1,0 +1,142 @@
+I"�<p>딥러닝 용어 정리</p>
+
+<p>딥러닝 용어 사전</p>
+
+<p>DeepLearning</p>
+
+<p>노드</p>
+
+<p>가중치</p>
+
+<p>바이어스</p>
+
+<p>활성화 함수</p>
+
+<p>ReLU</p>
+
+<p>LeakyReLU</p>
+
+<p>PReLU</p>
+
+<p>MaxOut</p>
+
+<p>sigmoid</p>
+
+<p>softmax</p>
+
+<p>선형 회귀</p>
+
+<p>로지스틱 회귀</p>
+
+<p>스프트맥스 회귀</p>
+
+<p>분류</p>
+
+<p>편차(Deviation)</p>
+
+<p>잔차</p>
+
+<p>오차</p>
+
+<p>Gradient Descent</p>
+
+<p>Adam</p>
+
+<p>Momentum</p>
+
+<p>RMSProp</p>
+
+<p>Vanshing Gradient</p>
+
+<p>Overfitting</p>
+
+<p>Blackbox</p>
+
+<p>end-to-end</p>
+
+<p>Forward Propagation</p>
+
+<p>Backward Propagation</p>
+
+<p>Perceptron</p>
+
+<p>Dropout</p>
+
+<p>Fine Tuning</p>
+
+<p>pruning</p>
+
+<p>Transfer Learning</p>
+
+<p>GAN</p>
+
+<p>DeepLearning Quantization</p>
+
+<p>meta learning</p>
+
+<p>matching network</p>
+
+<p>vot</p>
+
+<p>object detection</p>
+
+<p>RBM(Restricted Boltzmann Machine)</p>
+
+<p>원 핫 인코딩</p>
+
+<p>평균 제곱 오차 (Mean squared error: MSE)</p>
+
+<p>크로스 엔트로피 함수(Cross-entropy function)</p>
+
+<p>Loss Function</p>
+
+<p>Cost Function</p>
+
+<p>자코비안</p>
+
+<p>합성곱 신경망(Convolutional neural network)</p>
+
+<p>채널(Channel)</p>
+
+<p>패딩(Padding)</p>
+
+<p>풀링(Pooling)</p>
+
+<p>스트라이드(Stride)</p>
+
+<p>순환 신경망(Recurrent neural network)</p>
+
+<p>생산적 적대 신경망(Generative adversarial network)</p>
+
+<p>그래프 신경망(Graph neural network)</p>
+
+<p>지도학습</p>
+
+<p>비지도학습</p>
+
+<p>준지도학습</p>
+
+<p>강화학습</p>
+
+<p>Chain Rule(연쇄법칙)</p>
+
+<p>(Explainable artificial intelligence : EAI)</p>
+
+<p>AutoEncoder</p>
+
+<p>정규화</p>
+
+<p>Regularization</p>
+
+<p>L1 Regularization</p>
+
+<p>L2 Regularization</p>
+
+<p>Normalization</p>
+
+<p>scaling</p>
+
+<p>L1 Norm</p>
+
+<p>L2 Norm</p>
+:ET

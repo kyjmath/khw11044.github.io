@@ -1,0 +1,308 @@
+I"4)
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-blog-etc-jekyll-setting" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        jekyll 블로그 포스팅을 위한 세팅
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        지킬 블로그 포스팅 전 준비
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/blog-etc/" class="flip-title">Blog Etc</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<span>Setting</span>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-28T00:00:00+09:00">2021년 01월 28일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/library/2021-01-27-08_01_%EC%9E%90%EC%97%B0%EC%96%B4%EC%B2%98%EB%A6%AC%EC%A0%84%EC%B2%98%EB%A6%AC%EC%9D%B4%ED%95%B4/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/blog-etc/2021-01-28-jekyll-setting/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/blog-etc/2021-01-28-jekyll-setting/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <ul id="markdown-toc">
+  <li><a href="#개요" id="markdown-toc-개요">개요</a>    <ul>
+      <li><a href="#jekyll-spaceship" id="markdown-toc-jekyll-spaceship">Jekyll Spaceship!!!</a>        <ul>
+          <li><a href="#1-gemfile-파일에-아래-코드-넣기" id="markdown-toc-1-gemfile-파일에-아래-코드-넣기">1. Gemfile 파일에 아래 코드 넣기</a></li>
+          <li><a href="#2-_configyml파일의-plugins에-아래-코드-넣기" id="markdown-toc-2-_configyml파일의-plugins에-아래-코드-넣기">2. _config.yml파일의 plugins에 아래 코드 넣기</a></li>
+          <li><a href="#3-원하는-효과-필요없는-효과-골라서-넣기" id="markdown-toc-3-원하는-효과-필요없는-효과-골라서-넣기">3. 원하는 효과 필요없는 효과 골라서 넣기</a></li>
+        </ul>
+      </li>
+      <li><a href="#사용법" id="markdown-toc-사용법">사용법</a>        <ul>
+          <li><a href="#수학-수식--mathjax" id="markdown-toc-수학-수식--mathjax">수학 수식 : MathJax</a></li>
+          <li><a href="#mermaid" id="markdown-toc-mermaid">mermaid</a></li>
+          <li><a href="#media-유튜브등" id="markdown-toc-media-유튜브등">Media (유튜브등)</a></li>
+        </ul>
+      </li>
+      <li><a href="#자세한-사용법-reference" id="markdown-toc-자세한-사용법-reference">자세한 사용법, Reference</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h1 id="개요">개요</h1>
+<hr />
+<p>지금까지 깃헙 블로그를 하면서 수많은 어려움을 만났었는데요… ㅠㅠ<br />
+지킬 <strong>수학수식</strong> 넣는 방법을 찾기위해 몇일을 밤을 새며 찾아보고 (js파일을 다운받고 html을 만들고 불러오고 붙혀넣고, gem로 어떻게 하고… 그래도 안되고..)<br />
+지킬 <strong>mermaid</strong> 넣는 방법 찾기위해 수일을 쓰고..<br />
+지킬 <strong>유튜브 영상</strong>넣는 방법도 따로 뭐 만들고 넣고 불러오고…</p>
+
+<p>참 많은 고생을 했는데요…</p>
+
+<p>이제 그럴필요 없습니다.</p>
+
+<p>킹 갓 제네럴 <strong>지킬 플러그인</strong>을 소개 시켜드릴려고 합니다.</p>
+
+<p>지킬, github 블로그, github pages에 수학수식, mermaid, 유튜브 영상 모든지 이 Plugin이면 끝입니다.</p>
+
+<h2 id="jekyll-spaceship">Jekyll Spaceship!!!</h2>
+
+<p><a href="https://github.com/jeffreytse/jekyll-spaceship">Jekyll Spaceship!!!</a></p>
+
+<p>위 링크를 알아냈습니다…. 😂</p>
+
+<p>방법은</p>
+
+<h4 id="1-gemfile-파일에-아래-코드-넣기">1. Gemfile 파일에 아래 코드 넣기</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem 'jekyll-spaceship'
+</code></pre></div></div>
+
+<h4 id="2-_configyml파일의-plugins에-아래-코드-넣기">2. _config.yml파일의 plugins에 아래 코드 넣기</h4>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>plugins:
+  - jekyll-spaceship
+</code></pre></div></div>
+
+<h4 id="3-원하는-효과-필요없는-효과-골라서-넣기">3. 원하는 효과 필요없는 효과 골라서 넣기</h4>
+
+<p>저는 아래 코드를 다 넣었습니다.
+수학 수식을 위한 mathjax와 mermaid, media(유튜브등) 등등 많은 효과를 쉽게 쓰기위해 다 추가합니다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Where things are
+jekyll-spaceship:
+  # default enabled processors
+  processors:
+    - table-processor
+    - mathjax-processor
+    - plantuml-processor
+    - mermaid-processor
+    - polyfill-processor
+    - media-processor
+    - emoji-processor
+    - element-processor
+  mathjax-processor:
+    src:
+      - https://polyfill.io/v3/polyfill.min.js?features=es6
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    config:
+      tex:
+        inlineMath:
+          - ['$','$']
+          - ['\(','\)']
+        displayMath:
+          - ['\$\$','\$\$']
+          - ['\[','\]']
+      svg:
+        fontCache: 'global'
+    optimize: # optimization on building stage to check and add mathjax scripts
+      enabled: true # value `false` for adding to all pages
+      include: []   # include patterns for math expressions checking (regexp)
+      exclude: []   # exclude patterns for math expressions checking (regexp)
+  plantuml-processor:
+    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    css:
+      class: plantuml
+    syntax:
+      code: 'plantuml!'
+      custom: ['&lt;img class="plantuml" src="http://www.plantuml.com/plantuml/svg/~h407374617274756d6c272c202740656e64756d6c"&gt;']
+    src: http://www.plantuml.com/plantuml/svg/
+  mermaid-processor:
+    mode: default  # mode value 'pre-fetch' for fetching image at building stage
+    css:
+      class: mermaid
+    syntax:
+      code: 'mermaid!'
+      custom: ['&lt;img class="mermaid" src="https://mermaid.ink/svg/eyJjb2RlIjoiJywgJyIsIm1lcm1haWQiOnsidGhlbWUiOiJkZWZhdWx0In19"&gt;']
+    config:
+      theme: default
+    src: https://mermaid.ink/svg/
+  media-processor:
+    default:
+      id: 'media-{id}'
+      class: 'media'
+      width: '100%'
+      height: 350
+      frameborder: 0
+      style: 'max-width: 600px; outline: none;'
+      allow: 'encrypted-media; picture-in-picture'
+  emoji-processor:
+    css:
+      class: emoji
+    src: https://github.githubassets.com/images/icons/emoji/
+</code></pre></div></div>
+
+<h2 id="사용법">사용법</h2>
+
+<h3 id="수학-수식--mathjax">수학 수식 : MathJax</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ a * b = c ^ b $
+
+$ 2^{\frac{n-1}{3}} $
+
+$ \int\_a^b f(x)\,dx. $
+</code></pre></div></div>
+
+<p>$ a * b = c ^ b $</p>
+
+<p>$ 2^{\frac{n-1}{3}} $</p>
+
+<p>$ \int_a^b f(x)\,dx. $</p>
+
+<p>hydejack 테마의 경우 inline($한개만)이 안먹혔는데 이제는 된다. ^^</p>
+
+<h3 id="mermaid">mermaid</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\`\`\`mermaid!
+pie title Pets adopted by volunteers
+  "Dogs" : 386
+  "Cats" : 85
+  "Rats" : 35
+\`\`\`
+</code></pre></div></div>
+<p>\는 빼주세요</p>
+
+<pre><code class="language-mermaid">pie title Pets adopted by volunteers
+  "Dogs" : 386
+  "Cats" : 85
+  "Rats" : 35
+</code></pre>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\`\`\`mermaid!
+graph LR
+  A --&gt; B;
+  B --&gt; id03{C}
+  B -- from B to C --&gt;
+  D --- E
+  E -- from E to F --- F
+\`\`\`
+</code></pre></div></div>
+
+<pre><code class="language-mermaid">graph LR
+  A --&gt; B;
+  B --&gt; id03{C}
+  B -- from B to C --&gt;
+  D --- E
+  E -- from E to F --- F
+</code></pre>
+
+<blockquote>
+  <p><a href="https://mermaid-js.github.io/mermaid/#/">mermaid 자세한 사용법</a></p>
+</blockquote>
+
+<h3 id="media-유튜브등">Media (유튜브등)</h3>
+
+<p>Inline-style :</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![]({media-link})
+</code></pre></div></div>
+
+<p>Reference-style:</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![][{reference}]
+
+[{reference}]: {media-link}
+</code></pre></div></div>
+
+<p><strong>Youtube Usage</strong></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](https://www.youtube.com/watch?v=Ptk_1Dc2iPY)
+
+![](//www.youtube.com/watch?v=Ptk_1Dc2iPY?width=800&amp;height=500)
+</code></pre></div></div>
+
+<p><img src="https://www.youtube.com/watch?v=Ptk_1Dc2iPY" alt="" /></p>
+
+<p><img src="//www.youtube.com/watch?v=Ptk_1Dc2iPY?width=800&amp;height=500" alt="" /></p>
+
+<h2 id="자세한-사용법-reference">자세한 사용법, Reference</h2>
+
+<p><a href="https://github.com/jeffreytse/jekyll-spaceship">Jekyll Spaceship!!!</a></p>
+
+<ul>
+  <li>깃헙 레파지토리에 올리고 url로 확인해보니 하나도 적용이 안되어있네…. 로컬에서만 잘 작동되는 것이었다…</li>
+</ul>
+
+<p>이렇게 써져있기는 한데…</p>
+
+<p>누가 대신 해결해줬으면 좋겠네요..</p>
+
+<p>💡도움말 : GitHub 페이지는 safe모드 에서 실행되며 허용 된 플러그인 집합 만 허용 합니다 . GitHub 페이지에서 gem을 사용하려면 로컬에서 빌드하거나 CI (예 : travis , github workflow )를 사용하고 gh-pages브랜치에 배포해야합니다 .</p>
+
+<p>무제한 GitHub 페이지에 대한 추가 사항
+다음은 Jekyll 사이트 배포를위한 <a href="https://github.com/jeffreytse/jekyll-deploy-action">jekyll-deploy-action</a> 이라는 GitHub 작업 입니다.👍
+다음은 Travis를 사용하여 참조를 위해 GitHub 페이지를 구축하고 배포 하는 <a href="https://github.com/jeffreytse/jekyll-jeffreytse-blog">Jekyll 사이트</a> 입니다.</p>
+
+  
+</div>
+</article>
+:ET

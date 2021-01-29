@@ -1,0 +1,33 @@
+I"�<h2 id="01파이토치-패키지의-기본-구성">01.파이토치 패키지의 기본 구성</h2>
+<hr />
+
+<p>다음은 파이토치 패키지의 전반적인 구성</p>
+
+<h2 id="011-torch">01.1. torch</h2>
+<hr />
+<p>메인 네임스페이스.<br />
+텐서 등의 다양한 수학 함수가 포함되어져 있으며 Numpy와 유사한 구조를 가짐</p>
+
+<h2 id="012-torchautograd">01.2. torch.autograd</h2>
+<hr />
+<p>자동 미분을 위한 함수들이 포함되어져 있음.<br />
+자동 미분의 on/off를 제어하는 enable_grad, no_grad<br />
+자체 미분 가능 함수를 정의할 때 사용하는 기반 클래스인 ‘Function’등이 포함되어져 있음.</p>
+
+<h2 id="013-torchnn">01.3. torch.nn</h2>
+<hr />
+<p>신경망을 구축하기 위한 다양한 데이터 구조나 레이어 등이 정의되여져 있음.</p>
+
+<h2 id="014-torchopim">01.4. torch.opim</h2>
+<hr />
+<p>확률적 경사 하강법(Stochastic Gradient Descent,SGD)를 중심으로 한 파라미터 최적화 알고리즘이 구현되어져 있음.</p>
+
+<h2 id="015-torchutilsdata">01.5. torch.utils.data</h2>
+<hr />
+<p>SGD의 반복 연산을 실행할 때 사용하는 미니 배치용 유틸리티 함수가 포함되여져 있음.</p>
+
+<h2 id="016-torchonnx">01.6. torch.onnx</h2>
+<hr />
+<p>ONNX(Open Neural Network Exchange)의 포맷으로 모델을 익스포트(export)할 때 사용<br />
+ONNX는 서로 다른 딥 러닝 프레임워크 간에 모델을 공유할 때 사용하는 포멧</p>
+:ET

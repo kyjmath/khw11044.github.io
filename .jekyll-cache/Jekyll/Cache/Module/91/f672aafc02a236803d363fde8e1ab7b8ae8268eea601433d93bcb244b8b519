@@ -1,0 +1,146 @@
+I"�
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-blog-etc-setting-atom-anaconda" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        Atom에 Anaconda 연동하기
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        Atom 터미널에 Anaconda (base) 뜨게 하기
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/blog-etc/" class="flip-title">Blog Etc</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<a href="/atom/" class="flip-title">Atom</a>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2020-12-21T14:45:51+09:00">2020년 12월 21일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/blog-etc/2020-12-21-markdown-tutorial2/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/blog-etc/2020-12-21-jekyll-Latex/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/blog-etc/2020-12-21-setting-atom-anaconda/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/blog-etc/2020-12-21-setting-atom-anaconda/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h2 id="개요">개요</h2>
+<blockquote>
+  <p>Atom에 VS Code처럼 터미널을 이용할수 있게 세팅하고 아나콘다와 연동하여 터미널에 (base)가 뜨게 한다.</p>
+</blockquote>
+
+<h2 id="atom-platformio-ide-terminal-패키지-설치">atom platformio-ide-terminal 패키지 설치</h2>
+<hr />
+
+<p>[File] - [Settings] (Ctrl + ,) - [Install]</p>
+
+<p>platformio-ide-terminal 검색해서 설치</p>
+
+<h2 id="atom-platformio-ide-terminal에-아나콘다-연동">atom platformio-ide-terminal에 아나콘다 연동</h2>
+<hr />
+<p>atom platformio-ide-terminal에 anaconda를 연동을 해보자.</p>
+
+<p>열심히 찾아봤는데 일단 한국 블로그는 설명이 없다. 대박~!!</p>
+
+<p>내가 최초 게시물이다.</p>
+
+<p>다른분들은 퍼갈때 제 블로그 출처 남겨주세요~ ㅎㅎㅎ</p>
+
+<p><img src="/assets/img/Blog/Etc/setting/atom-conda1.png" alt="그림1" /></p>
+
+<p>보는것과 같이 platformio-ide-terminal을 설치하고 <code>Ctrl+\`</code> 하면 위 그림과 같이 나온다.</p>
+
+<p>당연히 <code>conda</code> 명령어를 치면 오류메시지가 나온다.</p>
+
+<p><code>Ctrl+,</code>로 Settings에 들어간다.</p>
+
+<p>[Settings] - [Packages]에  platformio-ide-terminal 패키지를 찾고 Settings 버튼을 누른다.</p>
+
+<p><strong>Core</strong>에 <strong>Auto run Command</strong>에 default를 자신의 아나콘다 activate 위치를 넣어준다.</p>
+
+<p>C:/Anaconda3/Scripts/activate</p>
+
+<p><img src="/assets/img/Blog/Etc/setting/atom-conda2.png" alt="그림2" /></p>
+
+<p>+ 추가적으로 나는 Shell Override도 바꿔주었다.</p>
+
+<p>C:\WINDOWS\System32\cmd.exe</p>
+
+<p><img src="/assets/img/Blog/Etc/setting/atom-conda3.png" alt="그림3" /></p>
+
+<p>성공~~</p>
+
+<h3 id="reference">Reference</h3>
+<blockquote>
+  <blockquote>
+    <p>참고 : <a href="https://stackoverflow.com/questions/43207427/using-anaconda-environment-in-atom">https://stackoverflow.com/questions/43207427/using-anaconda-environment-in-atom</a></p>
+  </blockquote>
+</blockquote>
+
+  
+</div>
+</article>
+:ET

@@ -1,0 +1,50 @@
+I"m<!--author-->
+
+<p><br /></p>
+
+<h2 id="소개">소개</h2>
+<hr />
+<p>Github pages 블로그를 운영하는 중입니다.💻<br />
+인공지능 대학원 석사 과정 중입니다.✏️✒️</p>
+
+<p>💡<strong>아무것도 몰랐을때 따라하면서 배워보자라는 생각으로 🍭따라쟁이🍭라 지었습니다.</strong> 💡</p>
+
+<p>제 📚<strong>관심분야</strong>는 다음과 같습니다.</p>
+
+<blockquote>
+  <p>📝 Machine Learning, Deep Learning</p>
+</blockquote>
+
+<p>저에게 조금 관심이 생기셨다면 <a href="/public/CV.pdf">CV</a>를 확인해주시면 감사하겠습니다! 😃</p>
+
+<blockquote>
+  <p><a href="https://khw11044.github.io/etc/2021/01/09/saturday.html">강의보러가기</a></p>
+</blockquote>
+
+<div class="me">
+    <div><img src="/assets/img/me/me0.jpg" /></div>
+    <div><img src="/assets/img/me/me1.jpg" /></div>
+    <div><img src="/assets/img/me/me3.jpg" /></div>
+    <div><img src="/assets/img/me/me5.jpg" /></div>
+    <div><img src="/assets/img/me/profile1.jpg" /></div>
+    <div><img src="/assets/img/me/profile2.jpg" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.me').slick();
+    });
+  </script>
+
+<hr />
+
+<p><br />
+<br />
+<br /></p>
+
+<h2 id="좋아하는-그림">좋아하는 그림</h2>
+
+<p><img src="/assets/img/Luncheon_of_Boating_Party.JPG" alt="Luncheon_of_Boating_Party" /></p>
+
+<p><a href="https://artsandculture.google.com/asset/luncheon-of-the-boating-party-pierre-auguste-renoir/mgHsTKDNJVzPAg">Google Arts &amp; Culture</a> ©  <b> Pierre-Auguste Renoir</b>. <code>Luncheon of the Boating Party</code>.  <em>1880-1881</em>. Oil on canvas</p>
+:ET

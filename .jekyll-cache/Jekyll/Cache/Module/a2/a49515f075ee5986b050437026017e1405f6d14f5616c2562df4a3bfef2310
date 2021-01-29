@@ -1,0 +1,95 @@
+I"�
+
+
+
+
+
+<!--제목-->
+<article id="post-study-연구" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        내 연구,논문 공부등
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/study/" class="flip-title">Study</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<span>Paper</span>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-15T12:45:51+09:00">2021년 01월 15일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/project/2021-01-15-KUIAI/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/etc/diary/2021-01-18-monday/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/study/2021-01-15-%EC%97%B0%EA%B5%AC/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/study/2021-01-15-%EC%97%B0%EA%B5%AC/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <p>…를 정해야하는데…</p>
+
+  
+</div>
+</article>
+:ET

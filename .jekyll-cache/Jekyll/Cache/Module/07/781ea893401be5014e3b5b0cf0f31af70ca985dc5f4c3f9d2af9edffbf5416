@@ -1,0 +1,412 @@
+I"q
+
+
+
+
+
+<!--제목-->
+<article id="post-blog-library-01_02_텐서조작하기2" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        PyTorch로 배우는 딥러닝/머신러닝 생기초
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        01.02.텐서 다루기2
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/blog/" class="flip-title">Blog</a> >> <a href="/library/" class="flip-title">Library</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<span>Pytorch</span>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-27T00:00:00+09:00">2021년 01월 27일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/blog/library/2021-01-27-01_02_%ED%85%90%EC%84%9C%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B01/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/blog/library/2021-01-27-01_03_%ED%8C%8C%EC%9D%B4%EC%8D%AC-%ED%81%B4%EB%9E%98%EC%8A%A4/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/blog/library/2021-01-27-01_02_%ED%85%90%EC%84%9C%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B02/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/blog/library/2021-01-27-01_02_%ED%85%90%EC%84%9C%EC%A1%B0%EC%9E%91%ED%95%98%EA%B8%B02/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h2 id="02텐서-조작하기tensor-manipulation2">02.텐서 조작하기(Tensor Manipulation)2</h2>
+<hr />
+
+<p>개요</p>
+<blockquote>
+  <p>이어서 텐서를 조작하는 방법을 알아본다, 텐서 차원 변경, 크기변경, View, Squeeze, Unsqueeze, Concatenate, Stacking, In-place Operation</p>
+</blockquote>
+
+<h4 id="4-4-뷰view---원소의-수를-유지하면서-텐서의-크기-변경">4-4) 뷰(View) - 원소의 수를 유지하면서 텐서의 크기 변경</h4>
+
+<p>파이토치 텐서의 뷰(View) : Numpy의 reshape과 같은 역할<br />
+텐서의 크기를 변경</p>
+
+<p>**x.view([?,?]) –&gt; x행렬을 ?x?크기의 행렬로 reshape, 원소의 개수는 유지</p>
+
+<p>3차원 텐서</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">([[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]],</span>
+              <span class="p">[[</span><span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
+               <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">]]])</span>
+<span class="n">ft</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([2, 2, 3])
+</code></pre></div></div>
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_05.JPG" alt="0102_05" /></p>
+
+<h4 id="4-4-1-3차원-텐서에서-2차원-텐서로-변경">4-4-1) 3차원 텐서에서 2차원 텐서로 변경</h4>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span> <span class="c1"># ft라는 텐서를 (?, 3)의 크기로 변경
+</span><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]).</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[ 0.,  1.,  2.],
+        [ 3.,  4.,  5.],
+        [ 6.,  7.,  8.],
+        [ 9., 10., 11.]])
+torch.Size([4, 3])
+</code></pre></div></div>
+
+<p>view([-1, 3]) :<br />
+-1: 첫번째 차원은 사용자가 잘 모르겠으니 파이토치에 맡기겠다는 의미<br />
+3 : 번째 차원의 길이는 3을 가지도록 하라는 의미<br />
+==&gt; 차원 텐서를 2차원 텐서로 변경하되 (?, 3)의 크기로 변경 :  (4, 3)의 크기</p>
+
+<p>(2, 2, 3) -&gt; (2 × 2, 3) -&gt; (4, 3)</p>
+
+<h4 id="4-4-2-3차원-텐서의-크기-변경">4-4-2) 3차원 텐서의 크기 변경</h4>
+<p>3차원 텐서에서 3차원 텐서로 차원은 유지하되, 크기(shape)를 바꿈</p>
+
+<p>view로 텐서의 크기를 변경하더라도 원소의 수는 유지</p>
+
+<p>(2 × 2 × 3) 텐서를 (? × 1 × 3) 텐서로 변경 –&gt; ?는 4<br />
+2 × 2 × 3) = (? × 1 × 3) = 12를 만족해야함</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">view</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]).</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[[ 0.,  1.,  2.]],
+        [[ 3.,  4.,  5.]],
+        [[ 6.,  7.,  8.]],
+        [[ 9., 10., 11.]]])
+torch.Size([4, 1, 3])
+</code></pre></div></div>
+
+<h4 id="4-5-스퀴즈squeeze---1인-차원을-제거">4-5) 스퀴즈(Squeeze) - 1인 차원을 제거</h4>
+<hr />
+<p>스퀴즈 : 차원이 1인 경우에는 해당 차원을 제거</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ft</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0.],
+        [1.],
+        [2.]])
+torch.Size([3, 1])
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">squeeze</span><span class="p">())</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">squeeze</span><span class="p">().</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([0., 1., 2.])
+torch.Size([3])
+</code></pre></div></div>
+<p>1이었던 두번째 차원이 제거되면서  (3,)의 크기를 가지는 텐서로 변경 : 1차원 벡터
+(3x1) –&gt; (3,)
+[[0.],<br />
+[1.],<br />
+[2.]] –&gt; [3]</p>
+
+<h4 id="4-6-언스퀴즈unsqueeze---특정-위치에-1인-차원을-추가">4-6) 언스퀴즈(Unsqueeze) - 특정 위치에 1인 차원을 추가</h4>
+<hr />
+<p>특정 위치에 1인 차원을 추가</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ft</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">Tensor</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>torch.Size([3])
+</code></pre></div></div>
+<p><strong>현재는 차원이 1개인 1차원 벡터</strong><br />
+첫번째 차원에 1인 차원을 추가</p>
+
+<p><strong>.unsqueeze(0)</strong> : 0은 index 0으로 첫번째 차원을 의미–&gt; 첫번째 차원에 1인 차원이 추가
+ (3,) –&gt; 첫번째 차원에 1인 차원을 추가하면 (1, 3)의 크기
+<strong>.unsqueeze(1)</strong> : 1은 index 1로 두번째 차원을 의미–&gt; 두번째 차원에 1인 차원이 추가
+ (3,) –&gt; 두번째 차원에 1인 차원을 추가하면 (3, 1)의 크기</p>
+
+<p><strong>.unsqueeze(-1)</strong> : -1은 마지막 index의 차원을 의미–&gt; 마지막 차원에 1인 차원이 추가</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span> <span class="c1"># 인덱스가 0부터 시작하므로 0은 첫번째 차원을 의미한다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0., 1., 2.]])
+torch.Size([1, 3])
+</code></pre></div></div>
+
+<p>(3,)의 크기를 가졌던 1차원 벡터 -&gt; (1, 3)의 2차원 텐서로 변경</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># 1은 두번째 차원을 의미한다.
+</span><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0.],
+        [1.],
+        [2.]])
+torch.Size([3, 1])
+</code></pre></div></div>
+
+<p>(3,)의 크기를 가졌던 1차원 벡터 -&gt; (3,1)의 2차원 텐서로 변경</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span> <span class="c1"># -1은 마지막 차원을 의미 여기서는 두번째 차원
+</span><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0., 1., 2.]])
+torch.Size([1, 3])
+</code></pre></div></div>
+
+<p>(3,)의 크기를 가졌던 1차원 벡터 -&gt; (3,1)의 2차원 텐서로 변경</p>
+
+<p><strong>.view()</strong> 로 1차원 벡터를 2차원 텐서로 만들기</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ft</span><span class="p">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">).</span><span class="n">shape</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0., 1., 2.]])
+torch.Size([1, 3])
+</code></pre></div></div>
+<p>unsqueeze랑 view랑 비슷~</p>
+
+<h4 id="4-7-타입-캐스팅type-casting">4-7) 타입 캐스팅(Type Casting)</h4>
+<hr />
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_06.JPG" alt="0102_06" /></p>
+
+<p>자료형을 변환하는 것 : 타입 캐스팅</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">lt</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">LongTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">lt</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">lt</span><span class="p">.</span><span class="nb">float</span><span class="p">())</span> <span class="c1"># long -&gt; float
+</span></code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">bt</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">ByteTensor</span><span class="p">([</span><span class="bp">True</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">False</span><span class="p">,</span> <span class="bp">True</span><span class="p">])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">bt</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">bt</span><span class="p">.</span><span class="nb">long</span><span class="p">())</span>  <span class="c1"># long 타입의 텐서로 변경
+</span><span class="k">print</span><span class="p">(</span><span class="n">bt</span><span class="p">.</span><span class="nb">float</span><span class="p">())</span> <span class="c1"># float 타입의 텐서로 변경
+</span></code></pre></div></div>
+
+<h4 id="4-8-연결하기concatenate">4-8) 연결하기(Concatenate)</h4>
+<hr />
+<p><strong>torch.cat[x,y]</strong> : x 텐서와 y 텐서를 연결,<br />
+dim : 어느 차원을 늘릴 것인지 인자로 줄 수 있음, dim=0 : 첫번째 차원을 늘림</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">]])</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 2.],
+        [3., 4.],
+        [5., 6.],
+        [7., 8.]])
+</code></pre></div></div>
+<p>dim=0 이면 두 개의 (2 × 2) 텐서 –&gt; (4 x 2)</p>
+
+<p>dim=1 이면</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 2., 5., 6.],
+        [3., 4., 7., 8.]])
+</code></pre></div></div>
+<p>dim=1 이면 두 개의 (2 × 2) 텐서 –&gt; (2 × 4)</p>
+
+<ul>
+  <li>딥 러닝에서는 주로 모델의 입력 또는 중간 연산에서 두 개의 텐서를 연결하는 경우가 많습니다. 두 텐서를 연결해서 입력으로 사용하는 것은 두 가지의 정보를 모두 사용한다는 의미를 가지고 있습니다.</li>
+</ul>
+
+<h4 id="4-9-스택킹stacking">4-9) 스택킹(Stacking)</h4>
+<hr />
+<p>연결(concatenate)을 하는 또 다른 방법으로 스택킹(Stacking)</p>
+
+<p>위에서 아래로 쌓기 : <strong>torch.stack([x,y,z])</strong><br />
+왼쪽에서 오른쪽으로 쌓기 : <strong>torch.stack([x,y,z], dim=1)</strong></p>
+
+<p>크기가 (2,)로 모두 동일한 3개의 벡터</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
+</code></pre></div></div>
+<p><strong>torch.stack을 통해서 3개의 벡터를 모두 스택킹</strong></p>
+
+<ul>
+  <li><strong>torch.stack([x,y,z])</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">]))</span>
+</code></pre></div>    </div>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 4.],
+      [2., 5.],
+      [3., 6.]])
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_07.JPG" alt="0102_07" /></p>
+
+<p>세 개의 (1 × 2) 텐서 아래로 stacking –&gt; (3 × 2)</p>
+
+<ul>
+  <li><strong>torch.stack([x,y,z], dim=1)</strong>
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">stack</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 2., 3.],
+        [4., 5., 6.]])
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/library/pytorch_basic/0102_08.JPG" alt="0102_08" /></p>
+
+<p>세 개의 (1 × 2) 텐서 옆으로 stacking –&gt; (2 × 3)</p>
+
+<p><strong>torch.stack([x, y, z])</strong><br />
+= <strong>torch.cat([x.unsqueeze(0), y.unsqueeze(0), z.unsqueeze(0)], dim=0)</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">cat</span><span class="p">([</span><span class="n">x</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">y</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">z</span><span class="p">.</span><span class="n">unsqueeze</span><span class="p">(</span><span class="mi">0</span><span class="p">)],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 4.],
+        [2., 5.],
+        [3., 6.]])
+</code></pre></div></div>
+
+<h4 id="4-10-ones_like와-zeros_like---0으로-채워진-텐서와-1로-채워진-텐서">4-10) ones_like와 zeros_like - 0으로 채워진 텐서와 1로 채워진 텐서</h4>
+<hr />
+
+<p>(2 x 3) 텐서</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0., 1., 2.],
+        [2., 1., 0.]])
+</code></pre></div></div>
+
+<p>ones_like를 하면 동일한 크기(shape)의 1으로만 값이 채워진 텐서를 생성</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">ones_like</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[1., 1., 1.],
+        [1., 1., 1.]])
+</code></pre></div></div>
+
+<p>zeros_like를 하면 동일한 크기(shape)의 0으로만 값이 채워진 텐서를 생성</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">torch</span><span class="p">.</span><span class="n">zeros_like</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[0., 0., 0.],
+        [0., 0., 0.]])
+
+</code></pre></div></div>
+
+<h4 id="4-11-in-place-operation-덮어쓰기-연산">4-11) In-place Operation (덮어쓰기 연산)</h4>
+
+<p><strong>연산 뒤에 _를 붙이면 기존의 값에 덮어쓰기</strong></p>
+
+<p>(2 × 2) 텐서를 만들고 x에 저장</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">x</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="n">FloatTensor</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]])</span>
+</code></pre></div></div>
+
+<p>곱하기 연산을 한 값과 기존의 값을 출력</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">mul</span><span class="p">(</span><span class="mf">2.</span><span class="p">))</span> <span class="c1"># 곱하기 2를 수행한 결과를 출력
+</span><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="c1"># 기존의 값 출력
+</span></code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[2., 4.],
+        [6., 8.]])
+tensor([[1., 2.],
+        [3., 4.]])
+</code></pre></div></div>
+
+<p>첫번째 출력은 곱하기 2가 수행된 결과<br />
+두번째 출력은 기존 값이 그대로 출력</p>
+
+<p>곱하기 2를 수행했지만 x에 다시 저장하지 않았으므로<br />
+기존 값 x는 변하지 않음</p>
+
+<p>연산 뒤에 _를 붙이면 기존의 값을 덮어쓰기를 함</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">mul_</span><span class="p">(</span><span class="mf">2.</span><span class="p">))</span>  
+<span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tensor([[2., 4.],
+        [6., 8.]])
+tensor([[2., 4.],
+        [6., 8.]])
+</code></pre></div></div>
+
+  
+</div>
+</article>
+:ET

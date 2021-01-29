@@ -1,0 +1,499 @@
+I"�J<h2 id="개요">개요</h2>
+<blockquote>
+  <p>내가 보기위한 마크다운 <code class="language-plaintext highlighter-rouge">Markdown</code> 작성법2 수식</p>
+</blockquote>
+
+<h3 id="katex-기호-모음">katex 기호 모음</h3>
+<blockquote>
+  <p><a href="https://jjycjnmath.tistory.com/117">katex 기호 모음</a></p>
+</blockquote>
+
+<h1 id="math">Math</h1>
+<hr />
+
+<p>이 장에 관심이 있다면 논문, 학술자료, 공학, 교사에 관련된 직업일 확률이 높습니다.
+글 또는 그림과 다르게 수학 기호와 수식은 그래프의 표현은 책을 집필할 때 어려움이 됩니다. 이 상황에서 Latex를 사용하면 유용합니다.
+이 책은 LaTex, WebTex, MathML을 소개합니다. LaTex를 심도있게 다루고 나머지 솔루션은 소개정도만 다룹니다.
+그럼 문서를 생성할 때 어떻게 수학의 기호나 그래프를 그리는지 알아보겠습니다.</p>
+
+<h2 id="latex">LaTex</h2>
+<hr />
+<p>LaTex는 오픈소스 조판시스템(Typesetting System)입니다.
+조판작업이란 최종 결과물이 출력이 되기전에 출력될 결과물에 맞게 도형,수식,글을 배치하는 작업입니다.
+LaTex를 이용해서 모든 형태를 그리고 배치할 수 있지만 대부분 수식, 그래프 작업이 필요할 때 일반적으로 많이 사용합니다.
+또한 물리학자들을 위한 학술 커뮤니케이션 언어로 많이 사용됩니다. 어렵고 이상해 보이지만 35년이상 사용되면서 필요한 표기를 잘 처리할 수 있었습니다.
+수식을 표현하는 솔루션은 LaTex, WebTex, MathML .. 등등 굉장히 많습니다.
+수식을 모든 문서에 표기하기 위해서는 비효율적이지만 LaTex문법을 이용해서 이미지로 렌더링 후 문서에 첨부하는 형태를 많이 사용합니다.
+불편하지만 다른 문서포멧으로 컨버팅 되더라도 문제없이 표시되기 때문입니다.
+만약 공유와 협업이 필요한 상황에서는 <a href="https://www.sharelatex.com">ShareLatex</a>를 사용하면 인터넷에서 친구들과 LaTex문서를 작성할 수 있습니다.</p>
+
+<h2 id="jekyllgithub-blog에서-latex-적용">Jekyll&amp;Github Blog에서 LaTex 적용</h2>
+<hr />
+
+<h3 id="mathjax">MathJax</h3>
+
+<p><code>_includes</code>폴더에 <a>Mathjax.html</a>를 만들고 아래 코드를 넣는다.</p>
+
+<h2 id="latex문법">LaTex문법</h2>
+<hr />
+
+<p>이 챕터에서는 컴퓨터로 수학기호를 표현할 수 있는 LaTex의 수식표현 문법을 배워보겠습니다.
+이 책은 Pandoc책이지만 Pandoc 만큼이나 LaTex를 조금 자세히 다루어 보는 책 입니다.
+수학기호를 책에 넣기위해서 노력하다 보면 LaTex를 잘 다루고 있는 자료를 찾기위해서 매번 인터넷을 해메이기 때문입니다.
+LaTex의 많은 문법들은 \문자로 시작합니다.</p>
+
+<h3 id="1사칙연산">1사칙연산</h3>
+<hr />
+
+<p>덧셈에 대한 표현입니다. 우리가 사용하는 표현과 크게 다르지 않습니다.</p>
+
+<p>$1 + 1 = 2$</p>
+
+<p>$$1 + 1 = 2$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$1 + 1 = 2$$
+</code></pre></div></div>
+
+<p>뺄셈의 표현</p>
+
+<p>$$2 - 1 = 1$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$2 - 1 = 1$
+</code></pre></div></div>
+
+<p>곱셈의 표현</p>
+
+<p>$2 \times 2 = 4$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$2 \times 2 = 4$
+</code></pre></div></div>
+
+<p>나눗셈의 표현</p>
+
+<p>$4 \div 2 = 2$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$4 \div 2 = 2$
+</code></pre></div></div>
+
+<h3 id="2분수--fraction">2분수 / fraction</h3>
+<p>분수 영어로는 fraction. LaTex에서는 약자로 frac이라는 문법을 사용합니다.</p>
+
+<p>$\frac{1}{2}$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\frac{1}{2}$
+</code></pre></div></div>
+
+<h4 id="요리에-자주-사용하는-분수">요리에 자주 사용하는 분수</h4>
+<p>우리가 사용하는 기호중에 간장 1큰술반 같은 표현식도 분수 표기법중에 하나입니다. 요리책에 많이나오는 형태의 분수도 입력해보겠습니다.</p>
+
+<p>$$^1/_2$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$^1/_2$
+</code></pre></div></div>
+
+<h3 id="3괄호-중괄호-대괄호">3괄호, 중괄호, 대괄호</h3>
+<p>LaTex에서 괄호를 사용하는 방법을 배워보겠습니다.</p>
+
+<h4 id="소괄호">소괄호</h4>
+
+<p>$$(1+2)$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$(1+2)$
+</code></pre></div></div>
+
+<h4 id="중괄호">중괄호</h4>
+
+<p>$${1+2}$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\{1+2\}$
+</code></pre></div></div>
+
+<h4 id="대괄호">대괄호</h4>
+
+<p>$$[1+2]$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$[1+2]$
+</code></pre></div></div>
+
+<h4 id="자동-괄호-리사이즈">자동 괄호 리사이즈</h4>
+<p>자동으로 괄호의 리사이즈가 되기 위해서는  “left”, “right” 문자를 좌우로 넣어줍니다.</p>
+
+<p>$$\left(\frac{2}{3}\right)$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\left(\frac{2}{3}\right)$
+</code></pre></div></div>
+
+<h4 id="수동-괄호-리사이즈">수동 괄호 리사이즈</h4>
+<p>big, Big, bigg, Bigg 문자를 사용하면 수동으로 괄호 사이즈를 조절할 수 있습니다.</p>
+
+<p>$$\Bigg( \bigg( \Big( \big( ( ) \big) \Big) \bigg) \Bigg)$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\Bigg( \bigg( \Big( \big( ( ) \big) \Big) \bigg) \Bigg)$
+</code></pre></div></div>
+
+<h3 id="4위첨자-지수--power">4위첨자 지수 / Power</h3>
+<p>승, 제곱에 해당하는 표기를 위해서 ^ 문자를 사용합니다.</p>
+
+<p>$$2^2=4$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$2^2=4$
+</code></pre></div></div>
+
+<h3 id="5아래첨자--indices">5아래첨자 / Indices</h3>
+<p>각 아이템의 아래첨자는 _ 문자로 표기합니다. _문자는 이후에 극한, 시그마, 적분표기 처럼 아래에 표기해야 하는 수식에서도 활용됩니다.</p>
+
+<p>$a_1, a_2, a_3$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$a_1, a_2, a_3$
+</code></pre></div></div>
+
+<h3 id="6dots">6dots</h3>
+<p>점을 출력하는 방법을 알아보겠습니다.
+수와 수 사이에 값이 존재하는 상황에서 생략적 표기로 점을 많이 사용합니다.</p>
+
+<p>$\dots$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\dots$
+</code></pre></div></div>
+
+<p>가운데를 기준으로 점을 표기합니다.</p>
+
+<p>$\cdots$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\cdots$
+</code></pre></div></div>
+
+<p>새로로 점을 표기하는 방법입니다. 세로형태의 행렬, 매트릭스 내부에서 활용합니다.</p>
+
+<p>$\vdots$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\vdots$
+</code></pre></div></div>
+
+<p>대각선을 점을 표시하는 방법입니다. 행렬, 매트릭스를 표기할 때 대각선방향에 활용합니다.</p>
+
+<p>$\ddots$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\ddots$
+</code></pre></div></div>
+
+<h3 id="7루트거듭제곱근--root">7루트(거듭제곱근) / Root</h3>
+<p>루트. square root의 약자로 sqrt 라고 사용합니다.</p>
+
+<p>$$\sqrt{2}$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\sqrt{2}$
+</code></pre></div></div>
+
+<h3 id="8펙토리얼--factorial">8펙토리얼 / Factorial</h3>
+<p>!문자는 수학에서 팩토리얼을 뜻합니다.
+3!이라는 뜻은 3,2,1 숫자로 만들수 있는 경우의 수 가 몇개인지를 뜻합니다.
+3!은 (3,2,1),(3,1,2)(2,1,3)(2,3,1),(1,2,3)(1,3,2) 총 6개의 경우의 수가 존재합니다.
+3x2x1=6 으로 계산했을때 결과와 경우의 수는 같습니다.</p>
+
+<p>$n!$</p>
+
+<p>$$n! = 1 \times 2 \times 3 \times \ldots n$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$n!$
+
+$n! = 1 \times 2 \times 3 \times \ldots n$
+</code></pre></div></div>
+
+<p>펙토리얼을 Product 표기법을 사용해서 표현하면 아래와 같습니다.</p>
+
+<p>$$n! = \prod_{k=1}^n k$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$n! = \prod_{k=1}^n k$
+</code></pre></div></div>
+
+<h3 id="9집합--set">9집합 / Set</h3>
+<p>LaTex에서 집합의 표기법을 다루어 보겠습니다.</p>
+
+<h4 id="합집합">합집합</h4>
+
+<p>$${a,b,c} \cup {d,e} = {a,b,c,d,e}$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$\{a,b,c\} \cup \{d,e\} = \{a,b,c,d,e\}$$
+</code></pre></div></div>
+
+<h4 id="교집합">교집합</h4>
+<p>위 표기의 역표기.</p>
+
+<p>$${a,b,c} \cap {a,b,d} = {a,b}$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$\{a,b,c\} \cap \{a,b,d\} = \{a,b\}$$
+</code></pre></div></div>
+
+<h4 id="차집합">차집합</h4>
+<p>B-A=파이 공집함</p>
+
+<h4 id="집합의-역">집합의 역</h4>
+<p>문자 위에 C 달린것</p>
+
+<h4 id="포함된다">포함된다</h4>
+<p>$$x \in [-1,1]$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\$\$x \in [-1,1]\$\$
+</code></pre></div></div>
+
+<h3 id="10삼각함수-싸인-코싸인-탄젠트-세타">10삼각함수, 싸인, 코싸인, 탄젠트, 세타</h3>
+<p>$$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\$\$\cos (2\theta) = \cos^2 \theta - \sin^2 \theta\$\$
+</code></pre></div></div>
+
+<h4 id="파이--pi">파이 / Pi</h4>
+<p>$\pi$</p>
+
+<p>$\Pi$</p>
+
+<p>$\phi$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\pi$
+
+$\Pi$
+
+$\phi$
+</code></pre></div></div>
+
+<h4 id="각도">각도</h4>
+<p>90도</p>
+
+<p>$90^\circ$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$90^\circ$
+</code></pre></div></div>
+
+<h3 id="11극한-limit">11극한, limit</h3>
+<p>$$\lim_{x \to \infty} \exp(-x) = 0$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\$\$\lim_{x \to \infty} \exp(-x) = 0\$\$
+</code></pre></div></div>
+
+<h3 id="12시그마for">12시그마,for</h3>
+<p>$$\sum_{i=1}^{10} t_i$$</p>
+
+<p>$$\displaystyle\sum_{i=1}^{10} t_i$$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\$\$\sum_{i=1}^{10} t_i\$\$
+
+\$\$\displaystyle\sum_{i=1}^{10} t_i\$\$
+</code></pre></div></div>
+
+<h3 id="13로그--log">13로그 / log</h3>
+
+<p>$\log_b a$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\log_b a$
+</code></pre></div></div>
+
+<h3 id="14미분--differential">14미분 / differential</h3>
+
+<p>$\dv{Q}{t} = \dv{s}{t}$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\dv{Q}{t} = \dv{s}{t}$
+</code></pre></div></div>
+
+<h3 id="15적분--integral">15적분 / integral</h3>
+<p>$\int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x$</p>
+
+<p>$\int\limits_a^b$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\int_0^\infty \mathrm{e}^{-x}\,\mathrm{d}x$
+
+$\int\limits_a^b$
+</code></pre></div></div>
+
+<h3 id="16행렬--list">16행렬 / list</h3>
+
+<h3 id="배열--matrix">배열 / matrix</h3>
+<p>\(A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+  a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+  a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
+ \end{pmatrix}\)</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$$A_{m,n} =
+ \begin{pmatrix}
+  a_{1,1} &amp; a_{1,2} &amp; \cdots &amp; a_{1,n} \\
+  a_{2,1} &amp; a_{2,2} &amp; \cdots &amp; a_{2,n} \\
+  \vdots  &amp; \vdots  &amp; \ddots &amp; \vdots  \\
+  a_{m,1} &amp; a_{m,2} &amp; \cdots &amp; a_{m,n}
+ \end{pmatrix}$$
+</code></pre></div></div>
+
+<h3 id="17벡터-스칼라--vector-scalar">17벡터, 스칼라 / Vector, Scalar</h3>
+<p>$\overrightarrow{AB}$</p>
+
+<p>$\overline{AB}$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\overrightarrow{AB}$
+
+$\overline{AB}$
+</code></pre></div></div>
+
+<h3 id="18선그리기">18선그리기</h3>
+
+<p>$\setlength{\unitlength}{3cm}
+\begin{picture}(1,1)
+\put(0,0){\line(1,0){1}}
+\put(0,0){\line(0,1){1}}
+\end{picture}$</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$\setlength{\unitlength}{3cm}
+\begin{picture}(1,1)
+\put(0,0){\line(1,0){1}}
+\put(0,0){\line(0,1){1}}
+\end{picture}$
+</code></pre></div></div>
+
+<h3 id="좌표그리기">좌표그리기</h3>
+<p>선을 그리는 방법을 응용하면 좌표를 그릴 수 있습니다. 또한 각진 도형들도 그릴 수 있습니다.</p>
+
+<h4 id="원그리기">원그리기</h4>
+
+\[\setlength{\unitlength}{1mm}
+\begin{picture}(60, 40)
+\put(30,20){\circle{10}}
+\end{picture}\]
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\setlength{\unitlength}{1mm}
+\begin{picture}(60, 40)
+\put(30,20){\circle{10}}
+\end{picture}
+</code></pre></div></div>
+
+<h3 id="벡터화살표-그리기">벡터(화살표) 그리기</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>\setlength{\unitlength}{0.75mm}
+\begin{picture}(60,40)
+\put(30,20){\vector(1,0){30}}
+\put(30,20){\vector(4,1){20}}
+\put(30,20){\vector(3,1){25}}
+\put(30,20){\vector(2,1){30}}
+\put(30,20){\vector(1,2){10}}
+\thicklines
+\put(30,20){\vector(-4,1){30}}
+\put(30,20){\vector(-1,4){5}}
+\thinlines
+\put(30,20){\vector(-1,-1){5}}
+\put(30,20){\vector(-1,-4){5}}
+\end{picture}
+</code></pre></div></div>
+
+\[\setlength{\unitlength}{0.75mm}
+\begin{picture}(60,40)
+\put(30,20){\vector(1,0){30}}
+\put(30,20){\vector(4,1){20}}
+\put(30,20){\vector(3,1){25}}
+\put(30,20){\vector(2,1){30}}
+\put(30,20){\vector(1,2){10}}
+\thicklines
+\put(30,20){\vector(-4,1){30}}
+\put(30,20){\vector(-1,4){5}}
+\thinlines
+\put(30,20){\vector(-1,-1){5}}
+\put(30,20){\vector(-1,-4){5}}
+\end{picture}\]
+
+<h3 id="논문에-자주-나오는-기호">논문에 자주 나오는 기호</h3>
+<ul>
+  <li>오메가 : $\omega$</li>
+</ul>
+
+<h4 id="latex-참고자료">LaTex 참고자료</h4>
+<p>아래 링크를 참고하시면 더 많은 LaTex정보를 보실 수 있습니다.</p>
+
+<ul>
+  <li>
+    <p>LaTex 문법을 쉽게 익힐 수 있는 곳은 아래 사이트입니다.
+  https://en.wikibooks.org/wiki/LaTeX/Mathematics</p>
+  </li>
+  <li>
+    <p>LaTex를 이용해서 많은것을 그릴 수 있습니다. 아래 URL에서 구경해보세요.
+  https://en.wikibooks.org/wiki/LaTeX/Picture</p>
+  </li>
+</ul>
+
+<h2 id="webtex">WebTex</h2>
+<p>LaTex는 종이 인쇄물 기반의 기술입니다. 현대 과학의 대부분의 정보는 Web으로 표기됩니다.
+WebTex 프로젝트는 LaTex를 html문서로 문제없이 컴파일 하는 것을 목표로 두고 있습니다.
+문법은 LaTex와 거의 같습니다.
+만약 여러분이 마크다운에서 WebTex 문법을 사용했다면 epub 파일을 제작할 때 아래 옵션을 추가해주면 됩니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>--webtex
+</code></pre></div></div>
+
+<p>WebTex 문법은 “$$수식$$” 형태로 구성되어 있습니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n
+</code></pre></div></div>
+
+<p>위 문장이 문제없이 잘 처리되었다면 epub문서에 아래와 같은 수식이 그려집니다.</p>
+
+<p>$$f(x)=\sum_{n=0}^\infty\frac{f^{(n)}(a)}{n!}(x-a)^n$$</p>
+
+<h4 id="참고자료">참고자료</h4>
+<ul>
+  <li>프로젝트 사이트 : <a href="http://pkgw.github.io/webtex/">http://pkgw.github.io/webtex/</a></li>
+  <li>프로젝트 코드 : <a href="https://github.com/pkgw/webtex/">https://github.com/pkgw/webtex/</a></li>
+</ul>
+
+<h2 id="mathml">MathML</h2>
+<p>Mathematical Markup Language의 약자입니다.
+epub3 에서 수학기호를 표현하는 방법중 하나입니다.
+XML 용용기술이며, HTML5 기술의 하나입니다.
+개인적으로 LaTex문법이 짧고 함축적이고 가독성이 더 좋다고 생각합니다.
+MathML은 여러분이 사용하는 브라우저가 지원할 수도 있고 지원하지 않을수도 있습니다.
+브라우저에 따라 결과가 다를 수 있습니다.
+파이어폭스, 사파리에서는 정상적으로 값이 출력되지만, 크롬에서는 아직 지원이 되지 않습니다.</p>
+
+<h4 id="mathml의-작성">MathML의 작성</h4>
+
+<p>2차방정식에 대한 근의 공식에 해당하는 MathML의 문법입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;math&gt;
+&lt;mi&gt;x&lt;/mi&gt;
+&lt;mo&gt;=&lt;/mo&gt;
+&lt;mfrac&gt;
+  &lt;mrow&gt;
+  &lt;mrow&gt;
+    &lt;mo&gt;-&lt;/mo&gt;
+    &lt;mi&gt;b&lt;/mi&gt;
+  &lt;/mrow&gt;
+  &lt;mo&gt;&amp;PlusMinus;&lt;/mo&gt;
+  &lt;msqrt&gt;
+    &lt;msup&gt;
+    &lt;mi&gt;b&lt;/mi&gt;
+    &lt;mn&gt;2&lt;/mn&gt;
+    &lt;/msup&gt;
+    &lt;mo&gt;-&lt;/mo&gt;
+    &lt;mrow&gt;
+    &lt;mn&gt;4&lt;/mn&gt;
+    &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+    &lt;mi&gt;a&lt;/mi&gt;
+    &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+    &lt;mi&gt;c&lt;/mi&gt;
+    &lt;/mrow&gt;
+  &lt;/msqrt&gt;
+  &lt;/mrow&gt;
+  &lt;mrow&gt;
+  &lt;mn&gt;2&lt;/mn&gt;
+  &lt;mo&gt;&amp;InvisibleTimes;&lt;/mo&gt;
+  &lt;mi&gt;a&lt;/mi&gt;
+  &lt;/mrow&gt;
+&lt;/mfrac&gt;
+&lt;/math&gt;
+</code></pre></div></div>
+
+<p>xml 문법을 사용하기 때문에 많은 태그가 작성되어야 합니다.
+일반적으로 LaTex 문법이 더 간단하기 때문에
+LaTex로 수식을 작성하고 MathML로 바꾸어주는 작업이 더 쉽습니다.</p>
+
+<p>LaTex to MathML 컨버팅을 지원하는 사이트입니다.</p>
+<ul>
+  <li><a href="https://www.mathtowebonline.com">https://www.mathtowebonline.com</a></li>
+</ul>
+:ET

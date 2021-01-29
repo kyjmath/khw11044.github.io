@@ -1,0 +1,214 @@
+I"<
+
+
+
+
+
+<!--제목-->
+<article id="post-etc-diary-wednesday" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        2021년 1월 13일
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        1월13월
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/etc/" class="flip-title">ETC</a> >> <a href="/diary/" class="flip-title">Diary</a>
+
+      
+
+
+
+
+
+
+
+
+
+
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-13T12:45:51+09:00">2021년 01월 13일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/etc/diary/2021-01-10-sunday/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/project/2021-01-15-KUIAI/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/etc/diary/2021-01-13-wednesday/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/etc/diary/2021-01-13-wednesday/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h2 id="marc-allante">Marc Allante</h2>
+
+<h3 id="요즘-빠진-사진들">요즘 빠진 사진들</h3>
+
+<p>최근에 알게되고 빠진 그림들이다.</p>
+
+<p>현대 미술가 Marc Allante는 단 한번도 미술을 배운 적이 없다고 한다.</p>
+
+<p>한번 그의 그림을 몇개만 살펴보자</p>
+
+<p><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Be_like_Water.JPG" alt="Be_like_Water" /></p>
+
+<hr />
+
+<div class="first">
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Prometheus.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Kronos.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-The_Old_Man_and_the_Sea.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-The_Crashing_Waves.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-The_Thinker.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Pallas.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Cepheus.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Atlas.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-A_Portrait_of_Hing_Kong.JPG" style="width: auto; height: 500px;" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.first').slick();
+    });
+  </script>
+
+<hr />
+
+<div class="second">
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Spring.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Dream_On.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Chai.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Lullaby.JPG" style="width: auto; height: 700px;" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.second').slick();
+    });
+  </script>
+
+<hr />
+
+<div class="third">
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Sisyphus.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Veris.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Atalanta.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Aphrodite.JPG" style="width: auto; height: 700px;" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.third').slick();
+    });
+  </script>
+
+<hr />
+
+<div class="forth">
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Achilles.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Clash.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Descent.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Faust.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Hyperion.JPG" style="width: auto; height: 700px;" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.forth').slick();
+    });
+  </script>
+
+<hr />
+
+<div class="fifth">
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Orion.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Tsunami.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Out_of_a_Rising_Sun.JPG" style="width: auto; height: 700px;" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.fifth').slick();
+    });
+  </script>
+
+<hr />
+
+<div class="last">
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-A_Pollock's_Point_Break.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Dreamers.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Eclipse.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Precipice.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Tempest.JPG" style="width: auto; height: 700px;" /></div>
+    <div><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-Two_Step.JPG" style="width: auto; height: 700px;" /></div>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $('.last').slick();
+    });
+  </script>
+
+<hr />
+
+<p><img src="/assets/img/etc/diary/2021/1-13/Marc_Allante-That's_No_Moon.JPG" alt="That's_No_Moon" /></p>
+
+<blockquote>
+  <p>돈있으면 꼭 사고싶은 그림이다. 그림을 보고 ‘갖고싶다’라는 생각이 처음 들었다.</p>
+</blockquote>
+
+<p>이분의 블로그에서 다른 그림들 살펴보자.</p>
+
+<p><a href="https://www.marcallante.com/portfolio">https://www.marcallante.com/portfolio</a></p>
+
+  
+</div>
+</article>
+:ET

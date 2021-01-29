@@ -1,0 +1,398 @@
+I"�1
+
+
+
+
+
+<!--제목-->
+<article id="post-project-KUIAI" class="page post mb6" role="article">
+  <header>
+    <h1 class="post-title flip-project-title">
+      
+        
+      
+    </h1>
+    <!--부제목-->
+    <h2 class="post-title flip-project-shubtitle">
+      
+        Anomaly Detection(이상 탐지)
+      
+    </h2>
+    <div class="post-date">
+      
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+카테고리 : <a href="/project/" class="flip-title">Project</a>
+
+      
+
+
+
+
+
+
+
+
+
+  tag #<span>Anomalydetection</span>
+
+      <br>
+      <!--년월일-->
+      
+      <time datetime="2021-01-15T12:45:51+09:00">2021년 01월 15일 글</time>
+    </div>
+    
+    
+
+    
+
+
+
+  <div class="hr pb0"></div>
+
+    <!--상단버튼-->
+    
+
+
+<div class="page-button">
+	<div>
+		
+		<a id="prev" class="button" href="/etc/diary/2021-01-13-wednesday/">&laquo; 이전글</a>
+		
+	</div>
+	<div>
+		
+		<a id="next" class="button" href="/study/2021-01-15-%EC%97%B0%EA%B5%AC/">다음글 &raquo;</a>
+		
+	</div>
+</div>
+      <div style="text-align:right; text-align: center">
+          <a href="https://hits.seeyoufarm.com/localhost:4000/project/2021-01-15-KUIAI/"
+            target="_blank">
+            <img
+            src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://localhost:4000/project/2021-01-15-KUIAI/&count_bg=%23293786&title_bg=%23555555&icon=bilibili.svg&icon_color=%23E7E7E7&title=.&edge_flat=false"/>
+          </a>
+      </div>
+  </header>
+  <div class="markdown-body">
+  
+    <h1 id="제-1회-kuiai-대회">제 1회 KUIAI 대회</h1>
+
+<p><img src="/assets/img/project/1kuiai/ku.jpg" alt="고려대학부생해커톤" width="400" height="500" /></p>
+
+<p>졸업전 산공 친구들과 추억을 쌓기위해 즉흥적으로 지원한 해커톤이였다.</p>
+
+<p>하루만에 끝나는 대회여서 부담이 없었다.</p>
+
+<p>하지만 어떤 데이터로 무엇을 하는지, 대회의 어떤 목표도 모른채 참여하게되었다.</p>
+
+<p>10시부터 12시까지 대회 소개 및 설명이였는데…</p>
+
+<p>정말 운영진 분들이 처음하는게 느껴졌다. zoom으로 하는데 영상도 안틀어지고, ppt도 보는데 굉장한 시간이 걸렸었다.</p>
+
+<p>참여팀은 대략 20팀? 그중에 탈주한 팀도 있었고….</p>
+
+<p>아마 제대로 한팀은 몇 팀 없었다. 오후 12시에 시작해서 다음날 12시까지 제출로 24시간 타임어택 해커톤인데. 11시45분까지 제출한팀이 2팀뿐이였다.</p>
+
+<p><img src="https://www.youtube.com/watch?v=9UuEUZ8QUe8" alt="" /></p>
+
+<p><br /></p>
+<iframe src="https://www.youtube.com/embed/" width="600" height="320" frameborder="0" allowfullscreen="">
+</iframe>
+<p><br /></p>
+
+<blockquote>
+  <p>주관 및 지원은 고려대학교, 사람투자, 한국산업기술진흥원, 한국전자기술연구원 이였다.</p>
+</blockquote>
+
+<h2 id="hackathon">Hackathon:</h2>
+<h2 id="anomaly-detection이상-탐지-in-industrial-envirioment">Anomaly Detection(이상 탐지) in industrial envirioment</h2>
+
+<p>대회 당일 홈페이지를 알려주었다.</p>
+
+<blockquote>
+  <p><a href="https://www.kamp-ai.kr/front/main/MAIN.01.01.jsp">데이터를 다운받은 사이트</a></p>
+</blockquote>
+
+<p><img src="/assets/img/project/1kuiai/8.JPG" alt="8" /></p>
+
+<blockquote>
+  <p>데이터셋에는 코드도 들어있고 csv 데이터도 들어있었다.<br />
+처음부터 하는것이 아니고 주어진 데이터를 수정하는거라서 다행이다 느꼈었다…처음에는<br />
+가이드북은 정말 세세하게 개념과 목표 이유, 데이터 소개, 코드 설명등 꼼꼼히 되어있었다.</p>
+</blockquote>
+
+<p>여기서 <code><b>제조 AI 데이터셋</b></code> 목록에 사출성형기 AI 데이터셋, 용해탱크 AI 데이터셋을 다운받고 데이터를 분석한 다음 3가지 목표를 이루는 것이였다.</p>
+
+<blockquote>
+  <p><strong>높은 검출 성능</strong><br />
+<strong>빠른 학습 및 판단속도</strong><br />
+<strong>가벼운 모델크기</strong></p>
+</blockquote>
+
+<h2 id="1-industiral-artificial-inteligence">1. Industiral Artificial Inteligence</h2>
+
+<ul>
+  <li>
+    <p>1.1 Autonomous factory</p>
+  </li>
+  <li>
+    <p>1.2 제조 AI 및 스마트공장 적용 현실</p>
+  </li>
+</ul>
+
+<p>주제는 크게 Industrial Artificial Inteligence로 IAI분야에서 Autonomous factory가 1차, 2차, 3차 산업혁명을 거치고 4차 산업혁명에서 Connectivity와 Benefits, Technology, Investment 관점에서 설명을 들었었다.</p>
+
+<p>현재 인공지능의 발전으로 여러 이론을 대입하여 공장에 적용하였지만 제조 AI및 스마트공장 적용 현실은 항상 완벽하지 못하고 있고 ceo는 그 성능에 실망하고 AI 도입을 철회하거나 미룬다고 하였다.</p>
+
+<h2 id="2-industiral-ai-problem">2. Industiral AI Problem</h2>
+
+<ul>
+  <li>
+    <p>2.1 라벨링 데이터의 부제</p>
+  </li>
+  <li>
+    <p>2.2 데이터 불균형의 문제</p>
+  </li>
+  <li>
+    <p>2.3 컴퓨터 성능 및 제조환경문제</p>
+  </li>
+  <li>
+    <p>2.4 검출 성능 문제</p>
+  </li>
+</ul>
+
+<h3 id="21-라벨링-데이터의-부제">2.1 라벨링 데이터의 부제</h3>
+
+<p><img src="/assets/img/project/1kuiai/1_wulmkxtly.JPG" alt="1" /></p>
+
+<p><img src="/assets/img/project/1kuiai/2_ilvwcmzzm.JPG" alt="2" /></p>
+
+<ul>
+  <li>
+    <p>좋은 머신러닝 모델을 만드려면 높은 수준의 학습 데이터가 필요</p>
+  </li>
+  <li>
+    <p>산업 현장 데이터는 자동으로 방대한 데이터가 쏟아지기 때문에 데이터를 라벨링하기가 어려움</p>
+  </li>
+</ul>
+
+<h3 id="22-데이터-불균형의-문제">2.2 데이터 불균형의 문제</h3>
+
+<p><img src="/assets/img/project/1kuiai/3.JPG" alt="3" /></p>
+
+<ul>
+  <li>
+    <p>라벨링을 어렵게 진행하더라도 데이터 불균형의 문제 발생</p>
+  </li>
+  <li>
+    <p>대부분의 공장 및 설비는 정상동작을 수행함</p>
+  </li>
+  <li>
+    <p>비정상 사례가 발생하는 빈도수가 극히 낮음</p>
+  </li>
+  <li>
+    <p>비정상 사례가 발생하더라도 발생 시각 및 유형을 선별하고 데이터로 저장하기 ㅇ려움</p>
+  </li>
+</ul>
+
+<h3 id="23-컴퓨터-성능-및-제조환경문제">2.3 컴퓨터 성능 및 제조환경문제</h3>
+
+<ul>
+  <li>
+    <p>딥러닝 기반 모델 학습 시 학습시간이 오랴 ㄱㄹ림</p>
+  </li>
+  <li>
+    <p>공정이 변화되거나 센서 부착위치가 변경되면 재학습이 필요</p>
+  </li>
+  <li>
+    <p>센서/설비 별 학습모델이 관리되어야 하는데 모델의 크기가 클 경우 컴퓨팅 용량문제가 발생할수 있음</p>
+  </li>
+  <li>
+    <p>학습시간 및 판단시간이 느리면 실제 서비스에서 활용되기 어려움에</p>
+  </li>
+  <li>
+    <p><b>실 적용가능한 AI는 학습 및 판단속도가 굉장히 빠르고 모델의 용량도 가벼워야함</b></p>
+  </li>
+</ul>
+
+<h3 id="24-검출-성능-문제">2.4 검출 성능 문제</h3>
+
+<ul>
+  <li>
+    <p>산업현장에서는 검출결과에 따른 설비정지/정비가 이뤄지기 때문에 검출성능이 아주 좋아야 실제 적용 가능</p>
+  </li>
+  <li>
+    <p>검출성능이 좋지 못하면 생산성 저하 및 점검 시간 증대로 역효과 발생 가능성이 높음</p>
+  </li>
+</ul>
+
+<h2 id="3-anomaly-detection">3. Anomaly Detection</h2>
+
+<ul>
+  <li>
+    <p>3.1 Anomaly Detection</p>
+  </li>
+  <li>
+    <p>3.2 Anomaly Detection Method</p>
+  </li>
+  <li>
+    <p>3.3 Outlier Detection / Novelty Detection</p>
+  </li>
+</ul>
+
+<h3 id="31-anomaly-detection">3.1 Anomaly Detection</h3>
+
+<p><img src="/assets/img/project/1kuiai/4_0.JPG" alt="4_0" /></p>
+
+<p><img src="/assets/img/project/1kuiai/5.JPG" alt="5" /></p>
+
+<p><img src="/assets/img/project/1kuiai/6.JPG" alt="6" /></p>
+
+<p><img src="/assets/img/project/1kuiai/4.JPG" alt="4" /></p>
+
+<ul>
+  <li>
+    <p>제조 현장에서 이상감지는 설비의 이상을 감지하거나 생산제품 또는 제조환경의 이상을 감지하는 것을 의미함</p>
+  </li>
+  <li>
+    <p>대부분 정상가공 또는 정상상태이지만, 특정상황에서 이상이 발생되고 이는 자동화라인 정지, 연속 불량 생산 등의 심대한 손해를 발생시킴</p>
+  </li>
+</ul>
+
+<h3 id="32-anomaly-detection-method">3.2 Anomaly Detection Method</h3>
+
+<ol>
+  <li>Tree-based: <b>Isolation-forest</b></li>
+</ol>
+
+<p><img src="/assets/img/project/1kuiai/5_tanaql0tt.JPG" alt="5" /></p>
+
+<p><a href="https://partrita.github.io/posts/isolation-forest/">isolation-forest관련 블로그</a></p>
+
+<p><a href="https://john-analyst.medium.com/isolation-forest%EB%A5%BC-%ED%86%B5%ED%95%9C-%EC%9D%B4%EC%83%81%ED%83%90%EC%A7%80-%EB%AA%A8%EB%8D%B8-9b10b43eb4ac">isolation-forest관련 블로그</a></p>
+
+<ol>
+  <li>Reconstruct-based: <b>AutoEncoder</b></li>
+</ol>
+
+<p><img src="/assets/img/project/1kuiai/6_ep440qtvq.JPG" alt="6" /></p>
+
+<ol>
+  <li>SVM-based: <b>One-class SVM</b></li>
+</ol>
+
+<p><img src="/assets/img/project/1kuiai/7.JPG" alt="7" /></p>
+
+<h3 id="33-outlier-detection--novelty-detection">3.3 Outlier Detection / Novelty Detection</h3>
+
+<p><img src="/assets/img/project/1kuiai/9.JPG" alt="9" /></p>
+
+<ul>
+  <li>Semi-Supervised (Novelty Detection)
+    <ul>
+      <li>Only nomarl data available to train</li>
+      <li>normal data only</li>
+    </ul>
+  </li>
+  <li>Unsupervised (Outlier Detection)
+    <ul>
+      <li>no labels</li>
+      <li>nomarl + abnormal data</li>
+    </ul>
+  </li>
+  <li>
+    <p>실 산업현장에서 얻은 데이터는 실제 데이터셋이 Novelty 환경인 경우가 많음 (정상만 있는 데이터 셋)</p>
+  </li>
+  <li>정상만 있는 데이터 셋에서 불량을 검출하는 경우에는 Isolation Forest등의 <em><b>알고리즘 검출 성능이 좋지 않음</b></em></li>
+</ul>
+
+<h2 id="4-goal">4. Goal</h2>
+
+<p><strong>High-performance Anomaly Detection in Nobelty</strong></p>
+
+<ul>
+  <li>주어진 데이터 셋에서 정상만 가지고 학습한 뒤 정상/비정상을 판단</li>
+  <li>데이터의 특성(다중클래스, 초코차원 데이터)에 따라 각기 다른 결과물이 나오기 때문에 데이터의 특성 분석 필요</li>
+  <li>
+    <p>신규 알고리즘을 개발(통계기반, 머신러닝, 딥러닝 상관없음)하거나, 기존 Anomaly Detection에 활용되는 알고리즘 조합 및 프로세스 변경 등의 다양한 접근</p>
+  </li>
+  <li>목표
+    <blockquote>
+      <p><strong>높은 검출 성능</strong><br />
+<strong>빠른 학습 및 판단속도</strong><br />
+<strong>가벼운 모델크기</strong></p>
+    </blockquote>
+  </li>
+</ul>
+
+<p>3가지를 목표로 최대한의 결과 도출</p>
+
+<blockquote>
+  <ul>
+    <li><strong>검증방법</strong>
+      <ul>
+        <li>검출검증 : 적용 알고리즘의 AUROC 수치, 언노멀 스코어 시각화, 혼동행렬(Confusion Matrix) 등으로 성능 검증</li>
+        <li>속도검증 : 학습 데이터 수량, 데이터 차원, 컴퓨터자원(CPU,RAM)을 명시하고 학습시간과 예측시간으로 성능검증</li>
+        <li>모델크기 : 필수 검증사항은 아니지만, 학습된 모델의 크기를 표시</li>
+      </ul>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="결론">결론</h2>
+
+<p>어려웠다… 이쪽분야를 전혀 모르고 있었다.</p>
+
+<p>새로 배운게 많고 느슨했던 나의 열정이 다시 깨어난거 같다.</p>
+
+<p>PCA, SVM, AutoEncoder, Anomaly Detection, Outlier Detection / Novelty Detection, Isolation-forest, Minimum Covariance Determinant Method 등 배워야할게 많아졌다.</p>
+
+<hr />
+<hr />
+
+<h2 id="코드공유"><a href="https://github.com/khw11044/KUIAI_v1">코드공유</a></h2>
+
+<hr />
+
+<p><img src="/assets/img/project/1kuiai/asd.png" alt="다운로드asd" /></p>
+
+<p><img src="/assets/img/project/1kuiai/pca3차원.JPG" alt="pca3차원" /></p>
+
+<p><img src="/assets/img/project/1kuiai/pca2차원.JPG" alt="pca2차원" /></p>
+
+<p><img src="/assets/img/project/1kuiai/n3.JPG" alt="n3" /></p>
+
+<p><img src="/assets/img/project/1kuiai/n2.JPG" alt="n2" /></p>
+
+<p><img src="/assets/img/project/1kuiai/n1.JPG" alt="n1" /></p>
+
+<p><img src="/assets/img/project/1kuiai/c1.JPG" alt="c1" /></p>
+
+<p><img src="/assets/img/project/1kuiai/k1.JPG" alt="k1" /></p>
+
+<p><img src="/assets/img/project/1kuiai/b2.JPG" alt="b2" /></p>
+
+<p><img src="/assets/img/project/1kuiai/b1.JPG" alt="b1" /></p>
+
+<p><img src="/assets/img/project/1kuiai/aaa_hd2eim8ps.JPG" alt="aaa" /></p>
+
+<h2 id="공부해야할-블로그">공부해야할 블로그</h2>
+
+<p><a href="https://gaussian37.github.io/ml-concept-ml-evaluation/#roc%EC%99%80-auc-1">https://gaussian37.github.io/ml-concept-ml-evaluation/#roc%EC%99%80-auc-1</a></p>
+
+  
+</div>
+</article>
+:ET

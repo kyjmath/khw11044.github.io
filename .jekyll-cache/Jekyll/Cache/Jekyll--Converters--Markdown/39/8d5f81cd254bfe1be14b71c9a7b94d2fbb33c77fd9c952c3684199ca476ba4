@@ -1,0 +1,117 @@
+I"�%<h1 id="개요">개요</h1>
+<blockquote>
+  <p>기존에 mathjax가 적용안되거나 되다 안되다하는것을 해결하였다.</p>
+</blockquote>
+
+<h2 id="기존-문제">기존 문제</h2>
+<hr />
+
+<h3 id="안되는-유형-1">안되는 유형 1</h3>
+
+<p>가장 대표적으로 이분꺼
+<img src="/assets/img/Blog/Etc/jekyll-Latex/1.JPG" alt="그림1" /></p>
+
+<blockquote>
+  <p><a href="https://mkkim85.github.io/blog-apply-mathjax-to-jekyll-and-github-pages/">안되는 위 블로그</a>
+<a href="https://jamiekang.github.io/2017/04/28/blogging-on-github-with-jekyll/">안되는 블로그2</a>
+<a href="https://seongkyun.github.io/others/2019/01/03/MathJax/">안되는 블로그3</a>
+<a href="https://johngrib.github.io/wiki/mathjax-latex/">안되는 블로그4</a></p>
+</blockquote>
+
+<p>안된다.</p>
+
+<p>뭔가 <strong>_includes</strong>폴더에 새 html파일을 만들어 코드를 넣고 <strong>_includes</strong>폴더든 <strong>_layouts</strong>폴더든 <strong>post.html</strong>, <strong>page.html</strong>, <strong>head.html</strong>, <strong>body.html</strong>에 ==include 하는 구조==는 전부 되다 안되다 한다. (다해봄 다 되다 안되다 개빡침)</p>
+
+<p>처음에는 안되는데 새로고침하면 된다던가 그런식이다.</p>
+
+<h3 id="안되는-유형-2">안되는 유형 2</h3>
+
+<p><img src="/assets/img/Blog/Etc/jekyll-Latex/3.JPG" alt="그림3" /></p>
+
+<p><img src="/assets/img/Blog/Etc/jekyll-Latex/2.JPG" alt="그림2" /></p>
+
+<p><strong>_config.yml</strong>에서</p>
+
+<p>이거저것 다운받아서 <strong>_plugin</strong>폴더에 넣고 <strong>plugins</strong>에 선언하는것도 안된다.</p>
+
+<p><strong>math_engine :</strong> 을 mathjax도 해보고 nil도 해보고 null도 해보고 katex도 해보았다 .</p>
+
+<p>다 안된다.</p>
+
+<p>뭐 다운받고 넣고 파일 만들고 넣고 <strong>Gemfile</strong>에 뭐 추가하고 <strong>bundle install</strong>하고 이틀을 밤새며 알아봤는데 해결 못하다가 알아냈다.</p>
+
+<h2 id="latex">LaTex</h2>
+<hr />
+
+<p>이거저것 설명 추가안하고 바로 본론을 말하자면</p>
+
+<p>이전 블로그들은 다 2019년쯤? 2020년초반대인데 뭐 이번부터인지 MathJax버전2가 안된다. 버전3이여야 한다고 하는데 그거마져 쉽지않다. 내 블로그 테마는 _js/src katex.js가 있어서 katex를 알아보았다.</p>
+
+<blockquote>
+  <p><a href="https://katex.org/docs/browser.html">KATEX설명</a></p>
+</blockquote>
+
+<p>너무 쉽다… 위 사이트에 들어가서 <strong>Starter template</strong>에 <a>&lt;head&gt;</a>부분(link1개 script2개)을 복사해서 <a>_includes/head.html</a>에 넣는다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"</span> <span class="na">integrity=</span><span class="s">"sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;</span>
+<span class="c">&lt;!-- The loading of KaTeX is deferred to speed up page rendering --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- To automatically render math in text elements, include the auto-render extension: --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"</span> <span class="na">integrity=</span><span class="s">"sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"</span> <span class="na">crossorigin=</span><span class="s">"anonymous"</span> <span class="na">onload=</span><span class="s">"renderMathInElement(document.body);"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/Etc/jekyll-Latex/4.png" alt="그림4" /></p>
+
+<p>그대로 넣고 확인하면 위 사진과 같이 inline이 안된다.</p>
+
+<p>옵션을 바꿔줘야 한다. render가 현재 auto-render이며 onload=”renderMathInElement”부분을 지우고 renderMathInElement()가 body에 들어가야한다.</p>
+
+<p>includes/katex_render.html을 만들어준다. 아래코드를 넣어준다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script&gt;</span>
+      <span class="nx">renderMathInElement</span><span class="p">(</span>
+          <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">,</span>
+          <span class="p">{</span>
+              <span class="na">delimiters</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span><span class="na">left</span><span class="p">:</span> <span class="dl">"</span><span class="se">\</span><span class="s2">$</span><span class="se">\</span><span class="s2">$</span><span class="dl">"</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="dl">"</span><span class="se">\</span><span class="s2">$</span><span class="se">\</span><span class="s2">$</span><span class="dl">"</span><span class="p">,</span> <span class="na">display</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span>
+                  <span class="p">{</span><span class="na">left</span><span class="p">:</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">[</span><span class="dl">"</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">]</span><span class="dl">"</span><span class="p">,</span> <span class="na">display</span><span class="p">:</span> <span class="kc">true</span><span class="p">},</span>
+                  <span class="p">{</span><span class="na">left</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="dl">"</span><span class="s2">$</span><span class="dl">"</span><span class="p">,</span> <span class="na">display</span><span class="p">:</span> <span class="kc">false</span><span class="p">},</span>
+                  <span class="p">{</span><span class="na">left</span><span class="p">:</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">(</span><span class="dl">"</span><span class="p">,</span> <span class="na">right</span><span class="p">:</span> <span class="dl">"</span><span class="se">\\</span><span class="s2">)</span><span class="dl">"</span><span class="p">,</span> <span class="na">display</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
+              <span class="p">]</span>
+          <span class="p">}</span>
+      <span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p>_includes/head.html에 넣어줬던 코드는 지우고 아래 코드로 바꿔준다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!--mathjax--&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">defer</span> <span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/Etc/jekyll-Latex/5.JPG" alt="그림5" /></p>
+
+<p><strong>인라인</strong>($)과 <strong>아웃라인</strong>($$) 둘다 잘 적용된것을 확인할수 있다.</p>
+
+<p>$$\lim_{x \to \infty} \exp(-x) = 0$$</p>
+
+<p>$\lim_{x \to \infty} \exp(-x) = 0$</p>
+
+<p>하지만 outline일때 배경이 회색인것은 어떻게 바꾸는지 모르겠다.(그냥 흰색배경이였으면 좋겠는데….)</p>
+
+<p>아시는분 알려주세요.</p>
+
+<p><kbd>==다음은 LaTex 수식 문법을 배워보자.==</kbd></p>
+
+<p><a href="https://khw11044.github.io/blog/2020/12/21/markdown-tutorial2.html">LaTex 수식 문법</a></p>
+
+<h2 id="reference">Reference</h2>
+<hr />
+<p>&gt;<a href="https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex">https://stackoverflow.com/questions/27375252/how-can-i-render-all-inline-formulas-in-with-katex</a></p>
+
+<p>&gt;<a href="https://katex.org/docs/browser.html">https://katex.org/docs/browser.html</a></p>
+
+<p>&gt;<a href="https://chrisyeh96.github.io/2020/03/29/mathjax3.html">https://chrisyeh96.github.io/2020/03/29/mathjax3.html</a></p>
+:ET

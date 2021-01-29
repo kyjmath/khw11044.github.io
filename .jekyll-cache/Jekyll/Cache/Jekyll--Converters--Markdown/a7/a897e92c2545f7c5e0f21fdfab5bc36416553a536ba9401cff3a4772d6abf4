@@ -1,0 +1,194 @@
+I"�2<h1 id="블로그내-게시물-검색기능-추가하기">블로그내 게시물 검색기능 추가하기</h1>
+
+<ul id="markdown-toc">
+  <li><a href="#블로그내-게시물-검색기능-추가하기" id="markdown-toc-블로그내-게시물-검색기능-추가하기">블로그내 게시물 검색기능 추가하기</a>    <ul>
+      <li><a href="#1_-폴더다운" id="markdown-toc-1_-폴더다운">1_ 폴더다운</a></li>
+      <li><a href="#2_-코드수정" id="markdown-toc-2_-코드수정">2_ 코드수정</a></li>
+      <li><a href="#3_-최적화-적용" id="markdown-toc-3_-최적화-적용">3_ 최적화 적용</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="1_-폴더다운">1_ 폴더다운</h2>
+<hr />
+<p>블로그를 오랫동안 관리하다보면 게시물들이 어머어마하게 많아지고 원하는 게시물을 찾는것도 일이된다.</p>
+
+<p>블로그에 게시물 찾기 기능이 있다면 원하는 게시물을 빠르게 찾을수 있을것이다.</p>
+
+<p>이런 기능을 추가해보자.</p>
+
+<p>아래 Github 레파지토리 주소에 접속한다.</p>
+
+<p>🔗 <a href="https://github.com/jekylltools/jekyll-tipue-search">​https://github.com/jekylltools/jekyll-tipue-search</a></p>
+
+<p>download 를 클릭하여, jekyll-tipue-search-master.zip 파일을 다운받아 압축을 푼다.</p>
+
+<p>압축을 풀면 나오는 search.html파일을 본인의 깃헙 블로그 최상위 디렉토리에 붙혀넣는다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-1.jpeg" alt="그림1" />
+다운받은 압축푼 파일에 search.html을</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-2.jpeg" alt="그림2" />
+자신의 블로그 폴더 root에 붙혀넣는다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-3.jpeg" alt="그림3" /></p>
+
+<p>다운 받은 압축푼 폴더의 assets의 tipuesearch폴더를 복사한다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-4.jpeg" alt="그림4" /></p>
+
+<p>자신의 블로그 폴더 root에 붙혀넣는다.</p>
+
+<h2 id="2_-코드수정">2_ 코드수정</h2>
+<hr />
+<p><strong>Tipue Search 환경설정</strong></p>
+
+<p>_config.yml에 가장 아래에 아래 코드를 추가한다.</p>
+
+<pre>
+<code>
+tipue_search:
+     include:
+         pages: false
+         collections: []
+     exclude:
+         files: [search.html, index.html, tags.html]
+         categories: []
+         tags: []
+</code>
+</pre>
+
+<p><img src="/assets/img/Blog/githubpages/5-5.jpeg" alt="그림5" /></p>
+
+<p>include 부분의 pages: false​의 설정은 pages 레이아웃에 해당하는 일반 html페이지는 검색하지 않겠다는 것을 의미한다.(포스트 내용 검색에 집중하기 위함)</p>
+
+<p>exclude 부분의 ​search.html, index.html, tags.html​ 페이지는 검색에서 제외하겠다는 것을 의미한다.</p>
+
+<p>_include/head/meta.html에</p>
+
+<p>본인의 깃헙 블로그 최상위 디렉토리/_includes/head.html (예: C:\blog_includes\head.html) 파일을 열어 META영역 제일하단, ​LINKS영역 바로 위의 위치에 다음의 코드를 추가한다.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">&lt;!--</span> <span class="nx">tipuesearch</span> <span class="o">--&gt;</span>
+ <span class="o">&lt;</span><span class="nx">link</span> <span class="nx">rel</span><span class="o">=</span><span class="dl">"</span><span class="s2">stylesheet</span><span class="dl">"</span> <span class="nx">href</span><span class="o">=</span><span class="dl">"</span><span class="s2">/assets/tipuesearch/css/tipuesearch.css</span><span class="dl">"</span><span class="o">&gt;</span>
+ <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/assets/tipuesearch/tipuesearch_content.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/assets/tipuesearch/tipuesearch_set.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span> <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">/assets/tipuesearch/tipuesearch.min.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p><img src="/assets/img/Blog/githubpages/5-6.JPG" alt="그림6" /></p>
+
+<p>search.html파일</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-7.jpeg" alt="그림7" width="400" /></p>
+
+<pre>
+<code>
+'wholeWords' : false,
+'showTime'   : false,
+'minimumLength' : 1
+</code>
+</pre>
+
+<p><code class="language-plaintext highlighter-rouge">layout: </code>
+page 부분은 포스팅이 담기는 레이아웃 명칭이다.(테마에 따라 다를 수 있음)</p>
+
+<p><code class="language-plaintext highlighter-rouge">permalink : </code>
+/search/ 부분은 다음 단계에서 설정할 검색어 및 버튼 Element의 form 태그 내 action 속성과 일치시켜야 한다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">'wholeWords': </code>
+false 속성은 한글 검색을 가능하게 하는 옵션이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">'showTime' : </code>
+false 속성은 검색이 완료되기 까지 소요된 시간을 표시하는 옵션이다.</p>
+
+<p><code class="language-plaintext highlighter-rouge">'minimumLength' : </code>
+1 속성은 최소 검색 글자수에 대한 설정으로 필자는 한단어 이상이면 검색가능하게 설정하였다.</p>
+
+<p>마지막으로 <strong>본인의 깃헙 블로그 최상위 디렉토리/_includes/sidebar.html</strong> (예: C:\blog_includes\sidebar.html) 파일을 열어 아래 그림과 같이 설정한다.</p>
+
+<ul>
+  <li>[주의사항]</li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">sidebar.html</code>
+ 페이지를 수정하는 이유는 필자가 검색창을 붙이길 원하는 위치의 페이지가 sidebar.html이기 때문입니다. 본인의 블로그에 검색창을 붙일 위치를 정한 후 해당 파일 및 파일 내 위치를 정한 후 해당 부분을 수정해야합니다.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"/search"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tipue_search_left"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/assets/tipuesearch/search.png"</span> <span class="na">class=</span><span class="s">"tipue_search_icon"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tipue_search_right"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"q"</span> <span class="na">id=</span><span class="s">"tipue_search_input"</span> <span class="na">pattern=</span><span class="s">".{1,}"</span> <span class="na">title=</span><span class="s">"At least 1 characters"</span> <span class="na">required</span><span class="nt">&gt;&lt;/div&gt;</span>
+   <span class="nt">&lt;div</span> <span class="na">style=</span><span class="s">"clear: both;"</span><span class="nt">&gt;&lt;/div&gt;</span>
+ <span class="nt">&lt;/form&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/githubpages/5-8.jpeg" alt="그림8" /></p>
+
+<p>action=”/search” 설정은 위의 search.html 파일의 permalink 속성과 일치시킨것이다.</p>
+
+<p>pattern=”.{1,}” 속성은 검색어가 1글자 이상이면 검색을 허용한다는 의미로 활용하는 정규표현식 설정이다.</p>
+
+<p>title=”At least 1 characters” 설정은 위의 pattern을 지키지 않은 채 검색을 시도할 경우 나타나는 알림메시지 문구이다.</p>
+
+<p>​</p>
+
+<p>설치가 마무리 되었으므로 아래 그림과 같이 검색이 잘 동작하는지 확인한다</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-9.jpeg" alt="그림9" /></p>
+
+<h2 id="3_-최적화-적용">3_ 최적화 적용</h2>
+<hr />
+<p>최적화 적용을 위한 디테일 마무리</p>
+
+<p>Tipue Search의 디폴트 기능만 설치된 상태이므로 필자는 블로그에 보다 친화적으로 어울릴 수 있도록 기능을 수정해보았다. 이번 단계는 귀차니즘 가동 시 건너뛰어도 무방하다.</p>
+
+<p><strong>검색 입력창</strong> 사이즈 조정을 위해</p>
+
+<p><code class="language-plaintext highlighter-rouge">assets\tipuesearch\css\tipuesearch.css</code>
+의 CSS 속성을 변경하였다.</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-10.jpeg" alt="그림10" /></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#tipue_search_input</span>
+<span class="p">{</span>
+     <span class="nl">color</span><span class="p">:</span> <span class="m">#333</span><span class="p">;</span>
+     <span class="nl">max-width</span><span class="p">:</span> <span class="m">150px</span><span class="p">;</span>
+     <span class="nl">max-height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+    <span class="nl">padding</span><span class="p">:</span> <span class="m">15px</span><span class="p">;</span>
+    <span class="nl">border</span><span class="p">:</span> <span class="m">2px</span> <span class="nb">solid</span> <span class="m">#626591</span><span class="p">;</span>
+    <span class="nl">border-radius</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">-moz-appearance</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">-webkit-appearance</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+     <span class="nl">box-shadow</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+    <span class="nl">outline</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+    <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/githubpages/5-11.jpeg" alt="그림11" /></p>
+
+<p>이제 컴파일하고 확인해보자.</p>
+
+<p><img src="/assets/img/Blog/githubpages/5-12.jpeg" alt="그림12" /></p>
+
+<p><strong>검색버튼(돋보기모양)</strong>이 좌측 메뉴의 배경색에 가려져 잘 보이지 않아 색상을 조절하였고, 본 테마의 img 태그 CSS 속성이 검색창 모양을 삐뚫어져 보이게 만들어 해당 태그의 CSS속성을 상속받아 사이즈를 수정하였다. 마찬가지로 C:\githubPages\theorydb.github.io\assets\tipuesearch\css\tipuesearch.css 파일에서 아래와 같이 CSS 속성을 변경하였다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.tipue_search_icon</span>
+<span class="p">{</span>
+     <span class="nl">width</span><span class="p">:</span> <span class="m">19px</span><span class="p">;</span>
+     <span class="nl">height</span><span class="p">:</span> <span class="m">19px</span><span class="p">;</span>
+     <span class="nl">margin-bottom</span><span class="p">:</span> <span class="m">1rem</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.tipue_search_left</span>
+<span class="p">{</span>
+     <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
+     <span class="nl">padding</span><span class="p">:</span> <span class="m">10px</span> <span class="m">5px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
+     <span class="nl">color</span><span class="p">:</span> <span class="m">#170247</span><span class="p">;</span>
+     <span class="nl">max-height</span><span class="p">:</span> <span class="m">20px</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="/assets/img/Blog/githubpages/5-13.JPG" alt="그림13" /></p>
+:ET

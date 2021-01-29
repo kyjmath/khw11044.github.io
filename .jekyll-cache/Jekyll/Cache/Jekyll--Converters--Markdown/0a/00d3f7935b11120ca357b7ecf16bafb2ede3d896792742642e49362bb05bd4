@@ -1,0 +1,93 @@
+I"�<h2 id="03파이썬-클래스class">03.파이썬 클래스(class)</h2>
+<hr />
+
+<p>개요</p>
+<blockquote>
+  <p>대부분의 파이토치의 구현체들이 기본적으로 클래스(Class)로 구현되어 있는것을 볼수 있다.</p>
+</blockquote>
+
+<h2 id="031-함수function와-클래스class">03.1. 함수(Function)와 클래스(class)</h2>
+<hr />
+
+<h3 id="11-함수function로-덧셈기-구현">1.1. 함수(function)로 덧셈기 구현</h3>
+
+<p>add 함수로 덧셈기 구현
+result를 전역변수로 선언</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div></div>
+<p>add함수 구현</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+  <span class="k">global</span> <span class="n">result</span>
+  <span class="n">result</span> <span class="o">+=</span> <span class="n">num</span>
+  <span class="k">return</span> <span class="n">result</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+7
+</code></pre></div></div>
+<p>result가 0 –&gt; +3 = 3이 출력, + 4 = result의 값이 이미 앞서 3으로 갱신되었기 때문에 3+4 = 7이 리턴</p>
+
+<h3 id="12-함수function로-덧셈기-두-개-구현">1.2. 함수(function)로 덧셈기 두 개 구현</h3>
+<p>두 개의 덧셈기를 만들기 위해 두개의 함수를 따로 독립적으로 구현해야함</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">result1</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">result2</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">add1</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">result1</span>
+    <span class="n">result1</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">result1</span>
+
+<span class="k">def</span> <span class="nf">add2</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">result2</span>
+    <span class="n">result2</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="n">result2</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">add1</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add1</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add2</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">add2</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+7
+3
+10
+</code></pre></div></div>
+
+<h3 id="13-클래스class로-덧셈기-구현">1.3. 클래스(class)로 덧셈기 구현</h3>
+<p>클래스는 붕어빵 틀, 객체라는 붕어빵을 계속 찍어낼수 있음</p>
+
+<p>클래스 : 붕어빵 틀 선언</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Calculator</span><span class="p">:</span>
+  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">num</span><span class="p">):</span>
+    <span class="bp">self</span><span class="p">.</span><span class="n">result</span> <span class="o">+=</span> <span class="n">num</span>
+    <span class="k">return</span> <span class="bp">self</span><span class="p">.</span><span class="n">result</span>
+</code></pre></div></div>
+
+<p>객체 : 붕어빵 만들기</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cal1</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">()</span>
+<span class="n">cal2</span> <span class="o">=</span> <span class="n">Calculator</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal1</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal2</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cal2</span><span class="p">.</span><span class="n">add</span><span class="p">(</span><span class="mi">7</span><span class="p">))</span>
+</code></pre></div></div>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>3
+7
+3
+10
+</code></pre></div></div>
+
+<p>두 개의 객체는 독립적으로 연산되고 있음을 알 수 있습니다. 앞에서는 이렇게 독립적인 두 개의 덧셈기를 함수로 구현하려고 했다면 함수를 두 개 만들어야 했지만, 클래스라는 것을 하나 선언하고, 이 클래스를 통해 별도의 객체를 생성하자 코드가 훨씬 간결해졌습니다.</p>
+:ET

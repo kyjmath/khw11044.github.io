@@ -1,0 +1,11 @@
+I"<h2 id="카테고리">카테고리</h2>
+
+<ul>
+  <li><a href="/githubpages/" class="heading flip-title">GithubPages</a> — 깃허브 블로그</li>
+  <li><a href="/library/" class="heading flip-title">Library</a> — Pytorch등 각종 라이브러리 공부</li>
+  <li><a href="/mldl/" class="heading flip-title">ML/DL</a> — ML/DL 개념 공부</li>
+  <li><a href="/class/" class="heading flip-title">Class</a> — 수업 공부</li>
+  <li><a href="/blog-etc/" class="heading flip-title">blog-etc</a> — 기타, 이것저것</li>
+</ul>
+
+:ET
